@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إكمال معلومات الحساب</title>
+    
+    <!-- Bootstrap CSS RTL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Root Variables */
+        :root {
+            --primary-color: #2c8577;
+            --secondary-color: #1a5f56;
+            --accent-color: #3fafaa;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e9ecef;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            direction: rtl;
+        }
+
+        /* Header Styles */
+        .header-section {
+            background: #4a4a4a;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-section .navbar {
+            padding: 0;
+        }
+
+        .header-section .navbar-brand .logo {
+            height: 40px;
+        }
+
+        .user-profile {
+            color: white !important;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .user-profile:hover {
+            color: var(--accent-color) !important;
+        }
+
+        .user-profile img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-icons i {
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .menu-toggle {
+            background: var(--primary-color);
+            border: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        /* Progress Section */
+        .progress-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .user-avatar {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .user-avatar img {
+            width: 80px;
+            height: 80px;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .completion-badge {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .section-title {
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        /* Progress Steps */
+        .progress-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--border-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .step.completed .step-circle {
+            background: var(--primary-color);
+        }
+
+        .step.active .step-circle {
+            background: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(44, 133, 119, 0.3);
+        }
+
+        .step-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .step.completed .step-label,
+        .step.active .step-label {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .step-line {
+            height: 2px;
+            background: var(--border-color);
+            flex: 1;
+            margin: 0 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-line.completed {
+            background: var(--primary-color);
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-title {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .form-subtitle {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(44, 133, 119, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: var(--text-light);
+        }
+
+        /* Select2 Styling */
+        .select2-container {
+            width: 100% !important;
+        }
+
+        .select2-container--default .select2-selection--single {
+            height: 45px !important;
+            border: 2px solid var(--border-color) !important;
+            border-radius: var(--border-radius) !important;
+            padding: 0.75rem !important;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 1.2 !important;
+            padding: 0 !important;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 43px !important;
+            right: 10px !important;
+        }
+
+        .select2-container--default.select2-container--focus .select2-selection--single {
+            border-color: var(--primary-color) !important;
+        }
+
+        .select2-dropdown {
+            border: 2px solid var(--primary-color) !important;
+            border-radius: var(--border-radius) !important;
+        }
+
+        /* Check boxes and Radio buttons */
+        .form-check {
+            padding-right: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-check-input {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 0.5rem;
+            border: 2px solid var(--border-color);
+        }
+
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .form-check-label {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* File Upload Areas */
+        .upload-area {
+            border: 2px dashed var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            background: var(--bg-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .upload-area:hover {
+            border-color: var(--primary-color);
+            background: rgba(44, 133, 119, 0.05);
+        }
+
+        .upload-area.dragover {
+            border-color: var(--primary-color);
+            background: rgba(44, 133, 119, 0.1);
+        }
+
+        .upload-content i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .upload-content p {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-content small {
+            color: var(--text-light);
+        }
+
+        .file-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Terms Section */
+        .terms-section {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+        }
+
+        .terms-section h4 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .terms-section p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            background: var(--primary-color);
+            border: none;
+            padding: 0.75rem 3rem;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-brand {
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-section h5 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+        }
+
+        /* Character Counter */
+        .form-text {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .progress-steps {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .step-line {
+                display: none;
+            }
+            
+            .form-section {
+                padding: 1rem;
+                margin: 0 1rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .footer-section .row {
+                text-align: center;
+            }
+            
+            .footer-section .col-md-2,
+            .footer-section .col-md-4 {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .main-content {
+                padding: 1rem 0;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .progress-steps {
+                padding: 0 1rem;
+            }
+            
+            .step-label {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Animation Effects */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* File Upload Preview */
+        .upload-preview {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .upload-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+        .upload-preview .file-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-preview .file-size {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Loading State */
+        .loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid var(--border-color);
+            border-top: 2px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <div class="navbar-brand">
+                    <img src="https://via.placeholder.com/120x40/ffffff/2c8577?text=تلنت+فايو" alt="Logo" class="logo">
+                </div>
+                
+                <div class="navbar-nav ms-auto">
+                    <div class="header-icons">
+                        <i class="fas fa-bell"></i>
+                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-globe"></i>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle user-profile" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                                <img src="https://via.placeholder.com/40x40/2c8577/ffffff?text=User" alt="User">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">الملف الشخصي</a></li>
+                                <li><a class="dropdown-item" href="#">الإعدادات</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">تسجيل خروج</a></li>
+                            </ul>
+                        </div>
+                        <button class="menu-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <div class="user-avatar">
+                    <img src="https://via.placeholder.com/80x80/2c8577/ffffff?text=User" alt="User">
+                    <div class="completion-badge">80%</div>
+                </div>
+                
+                <h2 class="section-title">إكمال معلومات الحساب</h2>
+                
+                <div class="progress-steps">
+                    <div class="step completed">
+                        <div class="step-circle"></div>
+                        <span class="step-label">اختيار الأقسام</span>
+                    </div>
+                    <div class="step-line completed"></div>
+                    <div class="step completed">
+                        <div class="step-circle"></div>
+                        <span class="step-label">معرض الاعمال</span>
+                    </div>
+                    <div class="step-line completed"></div>
+                    <div class="step active">
+                        <div class="step-circle"></div>
+                        <span class="step-label">الملف الشخصي</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <div class="step-circle"></div>
+                        <span class="step-label">بيانات الحساب</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="form-section">
+                <h3 class="form-title">اضف معرض اعمالك</h3>
+                <p class="form-subtitle">اضف أفضل 3 أعمال حديثة تظهر ما عملت في مجال عملك. سواء كانت لعمل قبل الشركة أو بعد الانضمام قبل طلب الانضمام</p>
+                
+                <form id="portfolioForm">
+                    <!-- Work Type Selection -->
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="workType" id="workType1" value="option1" checked>
+                            <label class="form-check-label" for="workType1">
+                                خدمة مركز أول
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Service Type -->
+                    <div class="form-group">
+                        <label for="serviceType" class="form-label">نوع الخدمة</label>
+                        <select class="form-select select2" id="serviceType" name="serviceType">
+                            <option value="">اختر نوع الخدمة</option>
+                            <option value="web-design">تصميم مواقع</option>
+                            <option value="app-dev">تطوير تطبيقات</option>
+                            <option value="graphic-design">تصميم جرافيك</option>
+                            <option value="digital-marketing">تسويق رقمي</option>
+                            <option value="content-writing">كتابة المحتوى</option>
+                            <option value="translation">الترجمة</option>
+                        </select>
+                    </div>
+
+                    <!-- Project Name -->
+                    <div class="form-group">
+                        <label for="projectName" class="form-label">اكتب اسم العمل</label>
+                        <input type="text" class="form-control" id="projectName" name="projectName" placeholder="أدخل اسم المشروع">
+                    </div>
+
+                    <!-- Description -->
+                    <div class="form-group">
+                        <label for="description" class="form-label">وصف العمل</label>
+                        <textarea class="form-control" id="description" name="description" rows="4" placeholder="اكتب وصف المشروع..."></textarea>
+                    </div>
+
+                    <!-- File Upload 1 -->
+                    <div class="form-group">
+                        <label class="form-label">اضف صورة غلاف للعمل</label>
+                        <div class="upload-area" id="upload1">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>اضغط للتحميل أو اسحب</p>
+                                <small>JPEG, PNG, JPG or GIF (Max: 800x400px)</small>
+                            </div>
+                            <input type="file" class="file-input" id="fileUpload1" accept="image/*">
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Images -->
+                    <div class="form-group">
+                        <label class="form-label">اضف صورة معرض للعمل</label>
+                        <div class="upload-area" id="upload2">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>اضغط للتحميل أو اسحب</p>
+                                <small>JPEG, PNG, JPG or GIF (Max: 800x400px)</small>
+                            </div>
+                            <input type="file" class="file-input" id="fileUpload2" accept="image/*" multiple>
+                        </div>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="form-group">
+                        <label for="projectDetails" class="form-label">اضف وصف نصي تفصيلي للعمل ولكن لا تزيد عن 200 حرف</label>
+                        <textarea class="form-control" id="projectDetails" name="projectDetails" rows="5" placeholder="نص تفصيلي للمشروع..."></textarea>
+                        <small class="form-text text-muted">عدد الأحرف المتبقية: 200</small>
+                    </div>
+
+                    <!-- Video Upload -->
+                    <div class="form-group">
+                        <label class="form-label">اضف فيديو للعمل يوضح كيفية العمل</label>
+                        <div class="upload-area" id="upload3">
+                            <div class="upload-content">
+                                <i class="fas fa-video"></i>
+                                <p>اضغط للتحميل أو اسحب</p>
+                                <small>MP4, MOV, AVI or WebM (Max: 50MB)</small>
+                            </div>
+                            <input type="file" class="file-input" id="fileUpload3" accept="video/*">
+                        </div>
+                    </div>
+
+                    <!-- Additional Options -->
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="additionalOption1" id="additionalOption1">
+                            <label class="form-check-label" for="additionalOption1">
+                                خدمة مركز ثاني
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="additionalOption2" id="additionalOption2">
+                            <label class="form-check-label" for="additionalOption2">
+                                خدمة مركز ثالث
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="terms-section">
+                        <h4>تأكيد الشروط</h4>
+                        <p>جميع الأعمال التي تقدم في الموقع ملكية لشركة المشروع.</p>
+                        <p>لضمان أن سيتم اضافة مشروعك بان لدى المستخدمين أعمال شركة حقيقية للمشروع.</p>
+                        <p>أعلم أنه سيتم استخدامها لعرض أعمال الشركة للعملاء.</p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-submit">التالي</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-md-4">
+                    <div class="footer-brand">
+                        <img src="https://via.placeholder.com/150x50/ffffff/2c8577?text=تلنت+فايو" alt="Logo" class="footer-logo">
+                        <p>موقع متخصص للخدمات الاستشارية الإدارية والمالية والتقنية والتطوير والتحسين المستمر</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-2">
+                    <h5>روابط</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">البحث عن عمل</a></li>
+                        <li><a href="#">مجتمع الأعمال</a></li>
+                        <li><a href="#">فرص عمل</a></li>
+                        <li><a href="#">مركز المساعدة</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-md-2">
+                    <h5>مشاريع</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">مشاريع الأعمال</a></li>
+                        <li><a href="#">مشاريع وسائل التواصل</a></li>
+                        <li><a href="#">مشاريع التسويق</a></li>
+                        <li><a href="#">مشاريع وتطبيقات</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="col-md-2">
+                    <h5>تلنت فايو</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">عن تلنت فايو</a></li>
+                        <li><a href="#">الاستشارات</a></li>
+                        <li><a href="#">ضمان حقوقك</a></li>
+                        <li><a href="#">مركز المساعدة</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-2">
+                    <h5>تواصل معنا</h5>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 - جميع الحقوق محفوظة لتطبيق عربي</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function() {
+            // Initialize Select2
+            $('.select2').select2({
+                placeholder: 'اختر من القائمة',
+                allowClear: true,
+                language: {
+                    noResults: function() {
+                        return 'لا توجد نتائج';
+                    },
+                    searching: function() {
+                        return 'جاري البحث...';
+                    }
+                }
+            });
+
+            // Character counter for textarea
+            $('#projectDetails').on('input', function() {
+                const maxLength = 200;
+                const currentLength = $(this).val().length;
+                const remaining = maxLength - currentLength;
+                
+                $(this).siblings('.form-text').text(`عدد الأحرف المتبقية: ${remaining}`);
+                
+                if (remaining < 0) {
+                    $(this).addClass('is-invalid');
+                    $(this).siblings('.form-text').addClass('text-danger');
+                } else {
+                    $(this).removeClass('is-invalid');
+                    $(this).siblings('.form-text').removeClass('text-danger');
+                }
+            });
+
+            // File upload functionality
+            $('.upload-area').each(function() {
+                const $uploadArea = $(this);
+                const $fileInput = $uploadArea.find('.file-input');
+                
+                // Click to upload
+                $uploadArea.on('click', function() {
+                    $fileInput.click();
+                });
+                
+                // Drag and drop
+                $uploadArea.on('dragover', function(e) {
+                    e.preventDefault();
+                    $uploadArea.addClass('dragover');
+                });
+                
+                $uploadArea.on('dragleave', function(e) {
+                    e.preventDefault();
+                    $uploadArea.removeClass('dragover');
+                });
+                
+                $uploadArea.on('drop', function(e) {
+                    e.preventDefault();
+                    $uploadArea.removeClass('dragover');
+                    
+                    const files = e.originalEvent.dataTransfer.files;
+                    if (files.length > 0) {
+                        handleFileUpload(files[0], $uploadArea);
+                    }
+                });
+                
+                // File input change
+                $fileInput.on('change', function() {
+                    const file = this.files[0];
+                    if (file) {
+                        handleFileUpload(file, $uploadArea);
+                    }
+                });
+            });
+
+            // Handle file upload
+            function handleFileUpload(file, $uploadArea) {
+                const maxSize = 10 * 1024 * 1024; // 10MB
+                
+                if (file.size > maxSize) {
+                    alert('حجم الملف كبير جداً. الحد الأقصى 10 ميجابايت');
+                    return;
+                }
+                
+                // Show loading
+                $uploadArea.addClass('loading');
+                
+                // Create preview
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = `
+                        <div class="upload-preview">
+                            <div class="file-name">${file.name}</div>
+                            <div class="file-size">${formatFileSize(file.size)}</div>
+                            ${file.type.startsWith('image/') ? `<img src="${e.target.result}" alt="Preview">` : ''}
+                        </div>
+                    `;
+                    
+                    $uploadArea.removeClass('loading');
+                    $uploadArea.find('.upload-content').hide();
+                    $uploadArea.append(preview);
+                };
+                
+                reader.readAsDataURL(file);
+            }
+
+            // Format file size
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            // Form validation
+            $('#portfolioForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                const requiredFields = ['serviceType', 'projectName', 'description'];
+                
+                requiredFields.forEach(function(field) {
+                    const $field = $(`#${field}`);
+                    if (!$field.val().trim()) {
+                        $field.addClass('is-invalid');
+                        isValid = false;
+                    } else {
+                        $field.removeClass('is-invalid');
+                    }
+                });
+                
+                if (isValid) {
+                    // Show loading state
+                    const $submitBtn = $('.btn-submit');
+                    $submitBtn.prop('disabled', true).text('جاري التحميل...');
+                    
+                    // Simulate form submission
+                    setTimeout(function() {
+                        alert('تم حفظ البيانات بنجاح!');
+                        $submitBtn.prop('disabled', false).text('التالي');
+                    }, 2000);
+                } else {
+                    alert('يرجى ملء جميع الحقول المطلوبة');
+                }
+            });
+
+            // Remove validation class on input
+            $('.form-control, .form-select').on('input change', function() {
+                $(this).removeClass('is-invalid');
+            });
+
+            // Auto-save functionality
+            let autoSaveTimer;
+            
+            function autoSave() {
+                clearTimeout(autoSaveTimer);
+                autoSaveTimer = setTimeout(function() {
+                    const formData = $('#portfolioForm').serialize();
+                    localStorage.setItem('portfolioFormData', formData);
+                    console.log('Form auto-saved');
+                }, 2000);
+            }
+
+            // Load saved data on page load
+            function loadSavedData() {
+                const savedData = localStorage.getItem('portfolioFormData');
+                if (savedData) {
+                    const params = new URLSearchParams(savedData);
+                    params.forEach((value, key) => {
+                        const $field = $(`[name="${key}"]`);
+                        if ($field.length) {
+                            if ($field.is('input[type="radio"]')) {
+                                $field.filter(`[value="${value}"]`).prop('checked', true);
+                            } else {
+                                $field.val(value);
+                            }
+                        }
+                    });
+                }
+            }
+
+            // Enable auto-save
+            $('#portfolioForm').on('input change', autoSave);
+            
+            // Load saved data
+            loadSavedData();
+
+            // Clear saved data on successful submission
+            $('#portfolioForm').on('submit', function() {
+                localStorage.removeItem('portfolioFormData');
+            });
+
+            // Mobile menu toggle
+            $('.menu-toggle').on('click', function() {
+                $(this).toggleClass('active');
+            });
+
+            // Responsive adjustments
+            function handleResize() {
+                if ($(window).width() < 768) {
+                    $('.progress-steps').addClass('mobile-view');
+                } else {
+                    $('.progress-steps').removeClass('mobile-view');
+                }
+            }
+
+            $(window).on('resize', handleResize);
+            handleResize();
+        });
+    </script>
+</body>
+</html>

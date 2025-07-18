@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العضوية - تلنت فلو</title>
+
+    <!-- Bootstrap 5 RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+        
+        /* Header Styles */
+        .header {
+            background-color: #3a3a3a;
+            padding: 12px 0;
+            border-bottom: 1px solid #4a4a4a;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .profile-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: url('/placeholder.svg?height=35&width=35') center/cover;
+            border: 2px solid #fff;
+        }
+        
+        .header-icon {
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .logo-icon {
+            width: 35px;
+            height: 25px;
+            background: linear-gradient(45deg, #ffffff 0%, #e0e0e0 100%);
+            margin-left: 8px;
+            border-radius: 3px;
+            position: relative;
+        }
+        
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 2px;
+            background: #3a3a3a;
+            border-radius: 1px;
+        }
+        
+        .menu-toggle {
+            background-color: #20b2aa;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        /* Main Content Layout */
+        .main-content-wrapper {
+            padding: 40px 0;
+        }
+        
+        .breadcrumb-nav {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .breadcrumb-nav a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .breadcrumb-nav span {
+            color: #20b2aa;
+            font-weight: 500;
+        }
+        
+        /* Sidebar Navigation */
+        .sidebar {
+            background-color: #eeeeee;
+            border-radius: 12px;
+            padding: 25px 0;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            padding: 0 25px 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 5px;
+        }
+        
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            padding: 12px 25px;
+            color: #333;
+            text-decoration: none;
+            font-size: 15px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .sidebar-nav a:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .sidebar-nav a.active {
+            background-color: #20b2aa;
+            color: white;
+            border-radius: 0 50px 50px 0;
+            margin-right: -12px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .sidebar-nav a.active i {
+            color: white;
+        }
+        
+        .sidebar-nav i {
+            font-size: 16px;
+            margin-left: 15px;
+            color: #666;
+        }
+
+        /* Membership Plans Section */
+        .membership-plans-section {
+            margin-bottom: 50px;
+        }
+
+        .membership-plans-section h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .plan-card {
+            background-color: #eeeeee;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            height: 100%; /* Ensure cards are same height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #ddd;
+        }
+
+        .plan-card.featured {
+            background: linear-gradient(to bottom right, #20b2aa, #1a9a92); /* Teal gradient */
+            color: white;
+            border-color: #20b2aa;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan-card.featured .plan-header h3,
+        .plan-card.featured .plan-price .current-price,
+        .plan-card.featured .plan-price .original-price,
+        .plan-card.featured .plan-features li {
+            color: white;
+        }
+
+        .plan-card.featured .plan-features i {
+            color: white; /* Checkmark color for featured */
+        }
+
+        .plan-header h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .plan-price {
+            margin-bottom: 25px;
+        }
+
+        .plan-price .original-price {
+            font-size: 18px;
+            color: #888;
+            text-decoration: line-through;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .plan-price .current-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #20b2aa;
+            line-height: 1;
+        }
+
+        .plan-price .currency {
+            font-size: 24px;
+            vertical-align: super;
+            margin-left: 5px;
+        }
+
+        .plan-price .period {
+            font-size: 16px;
+            color: #666;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            text-align: right; /* Align features to the right */
+        }
+
+        .plan-features li {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Align content to the right */
+        }
+
+        .plan-features i {
+            color: #20b2aa; /* Teal checkmark */
+            margin-left: 10px; /* Space between icon and text */
+            font-size: 14px;
+        }
+
+        .plan-button {
+            background-color: white;
+            color: #20b2aa;
+            border: 2px solid #20b2aa;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none; /* For anchor tag */
+            display: inline-block; /* For anchor tag */
+        }
+
+        .plan-button:hover {
+            background-color: #20b2aa;
+            color: white;
+        }
+
+        .plan-card.featured .plan-button {
+            background-color: white;
+            color: #20b2aa;
+            border-color: white;
+        }
+
+        .plan-card.featured .plan-button:hover {
+            background-color: #f0f0f0;
+            color: #20b2aa;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 50px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            background-color: #eeeeee;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden; /* Hide overflow for smooth collapse */
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            background-color: #eeeeee;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #e0e0e0;
+        }
+
+        .faq-question .toggle-icon {
+            font-size: 18px;
+            color: #20b2aa;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .toggle-icon {
+            transform: rotate(45deg); /* Rotate to form an 'X' or simply indicate open */
+        }
+
+        .faq-answer {
+            padding: 0 25px 18px;
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+            display: none; /* Hidden by default */
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #20b2aa;
+            color: white;
+            padding: 50px 0 25px;
+        }
+        
+        .footer-section h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .footer-brand {
+            margin-bottom: 25px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo-icon {
+            width: 35px;
+            height: 25px;
+            background: linear-gradient(45deg, #ffffff 0%, #f0f0f0 100%);
+            margin-left: 8px;
+            border-radius: 3px;
+            position: relative;
+        }
+        
+        .footer-logo-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 2px;
+            background: #20b2aa;
+            border-radius: 1px;
+        }
+        
+        .footer-description {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 20px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            margin-top: 30px;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .sidebar {
+                padding: 20px;
+            }
+            .sidebar-nav a {
+                padding: 10px 20px;
+            }
+            .sidebar-nav a.active {
+                margin-right: 0;
+                border-radius: 8px;
+            }
+            .main-form-content {
+                padding: 20px;
+            }
+            .plan-card {
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .main-content-wrapper .row {
+                flex-direction: column-reverse;
+            }
+            .sidebar, .main-form-content {
+                margin-bottom: 20px;
+            }
+            .sidebar-nav a.active {
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="profile-section">
+                        <div class="profile-avatar"></div>
+                        <i class="fas fa-bell header-icon"></i>
+                        <i class="fas fa-envelope header-icon"></i>
+                        <i class="fas fa-plus header-icon"></i>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="logo-section">
+                        <div class="logo">
+                            تلنت فلو
+                            <div class="logo-icon"></div>
+                        </div>
+                        <button class="menu-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content-wrapper">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="#">الرئيسية</a> <i class="fas fa-chevron-left mx-2"></i> <a href="#">إعدادات</a> <i class="fas fa-chevron-left mx-2"></i> <span>العضوية</span>
+            </div>
+
+            <div class="row">
+                <!-- Right Column: Sidebar -->
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <div class="sidebar-title">الإعدادات</div>
+                        <nav class="sidebar-nav">
+                            <ul>
+                                <li><a href="#"><i class="fas fa-user"></i> الملف الشخصي</a></li>
+                                <li><a href="#" class="active"><i class="fas fa-id-card"></i> العضوية</a></li>
+                                <li><a href="#"><i class="fas fa-envelope"></i> البريد الإلكتروني</a></li>
+                                <li><a href="#"><i class="fas fa-info-circle"></i> معلومات شخصية</a></li>
+                                <li><a href="#"><i class="fas fa-credit-card"></i> البطاقات الائتمانية</a></li>
+                                <li><a href="#"><i class="fas fa-bank"></i> الحسابات البنكية</a></li>
+                                <li><a href="#"><i class="fas fa-check-circle"></i> توثيق الهوية</a></li>
+                                <li><a href="#"><i class="fas fa-file-invoice"></i> كشف حساب</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Left Column: Membership Plans and FAQ -->
+                <div class="col-lg-8">
+                    <div class="membership-plans-section">
+                        <div class="row justify-content-center">
+                            <!-- Basic Plan -->
+                            <div class="col-md-4 mb-4">
+                                <div class="plan-card">
+                                    <div class="plan-header">
+                                        <h3>الاساسية</h3>
+                                        <p class="period">مجانا دائما</p>
+                                    </div>
+                                    <div class="plan-price">
+                                        <span class="currency">$</span>
+                                        <span class="current-price">0</span>
+                                    </div>
+                                    <ul class="plan-features">
+                                        <li><i class="fas fa-check"></i> 10 عروض شهريا</li>
+                                        <li><i class="fas fa-check"></i> 2 عروض حد الاستخدام اليومي</li>
+                                        <li><i class="fas fa-check"></i> 10 نماذج أعمال</li>
+                                        <li><i class="fas fa-check"></i> 10 مهارات</li>
+                                        <li><i class="fas fa-check"></i> دعم فني سريع</li>
+                                    </ul>
+                                    <a href="#" class="plan-button">Get Start</a>
+                                </div>
+                            </div>
+
+                            <!-- Professional Plan (Featured) -->
+                            <div class="col-md-4 mb-4">
+                                <div class="plan-card featured">
+                                    <div class="plan-header">
+                                        <h3>الاحترافية</h3>
+                                    </div>
+                                    <div class="plan-price">
+                                        <span class="original-price">$ 228</span>
+                                        <span class="currency">$</span>
+                                        <span class="current-price">190</span>
+                                    </div>
+                                    <ul class="plan-features">
+                                        <li><i class="fas fa-check"></i> 60 عروض شهريا</li>
+                                        <li><i class="fas fa-check"></i> 6 عروض حد الاستخدام اليومي</li>
+                                        <li><i class="fas fa-check"></i> 30 نموذج أعمال</li>
+                                        <li><i class="fas fa-check"></i> 30 مهارة</li>
+                                        <li><i class="fas fa-check"></i> دعم فني أسرع</li>
+                                    </ul>
+                                    <a href="#" class="plan-button">Get Start</a>
+                                </div>
+                            </div>
+
+                            <!-- Premium Plan -->
+                            <div class="col-md-4 mb-4">
+                                <div class="plan-card">
+                                    <div class="plan-header">
+                                        <h3>المميزة</h3>
+                                    </div>
+                                    <div class="plan-price">
+                                        <span class="original-price">$ 108</span>
+                                        <span class="currency">$</span>
+                                        <span class="current-price">90</span>
+                                    </div>
+                                    <ul class="plan-features">
+                                        <li><i class="fas fa-check"></i> 40 عروض شهريا</li>
+                                        <li><i class="fas fa-check"></i> 4 عروض حد الاستخدام اليومي</li>
+                                        <li><i class="fas fa-check"></i> 20 نموذج أعمال</li>
+                                        <li><i class="fas fa-check"></i> 20 مهارة</li>
+                                        <li><i class="fas fa-check"></i> دعم فني أسرع</li>
+                                    </ul>
+                                    <a href="#" class="plan-button">Get Start</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-section">
+                        <h2 class="text-center">الأسئلة الشائعة</h2>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    ما هو عدد العروض الشهري؟
+                                    <i class="fas fa-plus toggle-icon"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>يختلف عدد العروض الشهرية المتاحة حسب خطة العضوية التي تختارها. يرجى مراجعة تفاصيل كل خطة أعلاه لمعرفة العدد الدقيق.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    ما هو حد الاستخدام اليومي؟
+                                    <i class="fas fa-plus toggle-icon"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>حد الاستخدام اليومي هو أقصى عدد من العروض التي يمكنك تقديمها في يوم واحد، وهو مصمم لضمان الاستخدام العادل للمنصة.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    ما هي وسائل الدفع المتاحة؟
+                                    <i class="fas fa-plus toggle-icon"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>نحن ندعم مجموعة متنوعة من وسائل الدفع لتسهيل عملية الاشتراك، بما في ذلك البطاقات الائتمانية والتحويلات البنكية وخدمات الدفع الإلكتروني.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    هل يمكنني الاشتراك بعضوية مدفوعة من رصيد الحساب أو باستخدام باي بال؟
+                                    <i class="fas fa-plus toggle-icon"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>نعم، يمكنك الاشتراك في العضوية المدفوعة باستخدام رصيد حسابك أو من خلال باي بال، بالإضافة إلى خيارات الدفع الأخرى المتاحة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>روابط</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">ابحث عن عمل</a></li>
+                            <li><a href="#">معرض الأعمال</a></li>
+                            <li><a href="#">مدونة مستقل</a></li>
+                            <li><a href="#">مركز المساعدة</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>مشاريع</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">مشاريع أعمال</a></li>
+                            <li><a href="#">مشاريع هندسة ومعمارة</a></li>
+                            <li><a href="#">مشاريع تسويق</a></li>
+                            <li><a href="#">مشاريع برمجة</a></li>
+                            <li><a href="#">مشاريع كتابة وترجمة</a></li>
+                            <li><a href="#">مشاريع دعم ومساعدة</a></li>
+                            <li><a href="#">مشاريع تدريب</a></li>
+                            <li><a href="#">التطبيقات</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>تلنت فلو</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">عن تلنت فلو</a></li>
+                            <li><a href="#">الأسئلة الشائعة</a></li>
+                            <li><a href="#">ضمان حقوقك</a></li>
+                            <li><a href="#">شروط الاستخدام</a></li>
+                            <li><a href="#">بيان الخصوصية</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <div class="footer-brand">
+                            <div class="footer-logo">
+                                تلنت فلو
+                                <div class="footer-logo-icon"></div>
+                            </div>
+                            <p class="footer-description">
+                                نوفر منصتنا أفضل البرامج للطلاب لحسابهم الخاص والمطورين، مما يسهل التواصل والتعاون وإنجاز الأعمال
+                            </p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                Copyright 2024 © - All rights reserved to talent flow
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap 5 JS (for dropdowns, etc. if needed, though not strictly for design) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // FAQ Toggle Functionality
+            $('.faq-question').on('click', function() {
+                const $parentItem = $(this).closest('.faq-item');
+                const $answer = $parentItem.find('.faq-answer');
+                const $icon = $(this).find('.toggle-icon');
+
+                // Close other open FAQs
+                $('.faq-item').not($parentItem).find('.faq-answer').slideUp(300);
+                $('.faq-item').not($parentItem).find('.faq-question').removeClass('active');
+                $('.faq-item').not($parentItem).find('.toggle-icon').removeClass('fa-minus').addClass('fa-plus').css('transform', 'rotate(0deg)');
+
+                // Toggle current FAQ
+                $answer.slideToggle(300);
+                $(this).toggleClass('active');
+                if ($(this).hasClass('active')) {
+                    $icon.removeClass('fa-plus').addClass('fa-minus').css('transform', 'rotate(0deg)'); // Change to minus
+                } else {
+                    $icon.removeClass('fa-minus').addClass('fa-plus').css('transform', 'rotate(0deg)'); // Change back to plus
+                }
+            });
+        });
+    </script>
+</body>
+</html>
