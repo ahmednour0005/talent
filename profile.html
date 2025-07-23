@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الإعدادات - تلنت فلو</title>
+
+<!-- Bootstrap 5 RTL CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+<!-- Select2 CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<!-- Font Awesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Google Fonts for Arabic -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- intl-tel-input CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="asset/css/rtl_style.css">
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-md-8">
+              <div class="profile-section">
+                 <div class="profile-avatar" style="background: url('./asset/images/profile.png') center / cover;"></div>
+                  <i class="fas fa-bell header-icon"></i>
+                  <i class="fas fa-envelope header-icon"></i>
+                  <i class="fas fa-globe header-icon"></i>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="logo-section">
+                  <div class="logo">
+                        <img src="asset/images/logo_white.png" alt="">
+                  </div>
+                  <button class="menu-toggle">
+                      <span class="hamburger-line"></span>
+                      <span class="hamburger-line"></span>
+                      <span class="hamburger-line"></span>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content-wrapper">
+  <div class="container">
+      <div class="breadcrumb-nav">
+          <a href="#">الرئيسية</a> <i class="fas fa-chevron-left mx-2"></i> <span>إعدادات</span>
+      </div>
+      <div class="row">
+          <!-- Right Column: Sidebar and Completion Steps -->
+          <div class="col-lg-4">
+              <div class="sidebar">
+                  <div class="sidebar-title">الإعدادات</div>
+                  <nav class="sidebar-nav">
+                      <ul>
+                          <li><a href="#" class="active"><i class="fas fa-user"></i> الملف الشخصي</a></li>
+                          <li><a href="#"><i class="fas fa-id-card"></i> العضوية</a></li>
+                          <li><a href="#"><i class="fas fa-envelope"></i> البريد الإلكتروني</a></li>
+                          <li><a href="#"><i class="fas fa-info-circle"></i> معلومات شخصية</a></li>
+                          <li><a href="#"><i class="fas fa-credit-card"></i> البطاقات الائتمانية</a></li>
+                          <li><a href="#"><i class="fas fa-bank"></i> الحسابات البنكية</a></li>
+                          <li><a href="#"><i class="fas fa-check-circle"></i> توثيق الهوية</a></li>
+                          <li><a href="#"><i class="fas fa-file-invoice"></i> كشف حساب</a></li>
+                      </ul>
+                  </nav>
+              </div>
+              <div class="completion-steps">
+                  <div class="completion-steps-title">خطوات إكمال الحساب</div>
+                  <ul>
+                      <li class="completed-text">
+                            <span class="step-icon completed"><i class="fas fa-check"></i></span>
+                            <span class="completed-text-doc" > تأكيد رقم الجوال </span>
+                          </li>
+                      <li><span class="step-icon"></span> إضافة المهارات</li>
+                      <li><span class="step-icon"></span> إضافة أعمال جديدة</li>
+                      <li><span class="step-icon"></span> توثيق الهوية</li>
+                  </ul>
+              </div>
+          </div>
+
+          <!-- Left Column: Profile Edit Form -->
+          <div class="col-lg-8">
+              <!-- New Profile Header Section -->
+              <div class="profile-header-banner">
+                  <div class="profile-img-container">
+                      <div class="profile-img"></div>
+                      <!-- Hidden file input for image upload -->
+                      <input type="file" id="profileImageUpload" accept="image/*" style="display: none;">
+                      <div class="edit-icon" id="editProfileIcon"><i class="fas fa-pencil-alt"></i></div>
+                  </div>
+              </div>
+              <div class="main-form-content">
+                  <div class="form-group">
+                      <label>نوع الحساب<span class="star-required">*</span></label>
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="projectOwner" >
+                          <label class="form-check-label" for="projectOwner">
+                              <strong>صاحب مشاريع</strong> (ابحث عن مستقلين لتنفيذ مشاريعي)
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="freelancer" checked>
+                          <label class="form-check-label" for="freelancer">
+                              <strong>مستقل</strong> (ابحث عن مشاريع لتنفيذها)
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="availableForHire" checked>
+                          <label class="form-check-label" for="availableForHire">
+                              <strong>متاح للتوظيف</strong> (إزالة هذه الإشارة سيخفي حسابك بشكل مؤقت من نتائج البحث)
+                          </label>
+                      </div>
+                  </div>
+
+                  <!-- These fields will be conditionally visible based on 'freelancer' checkbox -->
+                  <div class="row personal-info-fields">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="firstName">الاسم<span class="star-required">*</span></label>
+                              <input type="text" class="form-control" id="firstName" value="فاطمة">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="lastName">اسم العائلة<span class="star-required">*</span></label>
+                              <input type="text" class="form-control" id="lastName" value="عبد النبي">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row personal-info-fields">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="country">الدولة<span class="star-required">*</span></label>
+                              <select class="form-select form-control" id="country">
+                                  <option>اليمن</option>
+                                  <option>السعودية</option>
+                                  <option>مصر</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="language">اللغة<span class="star-required">*</span></label>
+                              <select class="form-select form-control" id="language">
+                                  <option>اللغة العربية</option>
+                                  <option>English</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row personal-info-fields">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="gender">الجنس<span class="star-required">*</span></label>
+                                  <select class="form-select form-control" id="gender">
+                                      <option>أنثى</option>
+                                      <option>ذكر</option>
+                                  </select>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                  <label>تاريخ الميلاد<span class="star-required">*</span></label>
+                                  <div class="input-group">
+                                      <select class="form-select form-control" id="dobDay">
+                                          <option value="">يوم</option>
+                                      </select>
+                                      <select class="form-select form-control" id="dobMonth">
+                                          <option value="">شهر</option>
+                                      </select>
+                                      <select class="form-select form-control" id="dobYear">
+                                          <option value="">سنة</option>
+                                      </select>
+                                  </div>
+                              </div>
+                            </div>
+                      </div>
+                      <div class="form-group personal-info-fields">
+                          <label for="phoneNumber">رقم الجوال <span class="star-required">*</span></label>
+                          <div class="phone-input-container">
+                              <div class="input-group">
+                                  <input type="tel" id="phoneNumber" class="form-control phone-input" placeholder="+1 (555) 000-0000">
+                                  <button type="button" class="btn btn-primary activate-btn">تفعيل</button>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <!-- These fields will always be visible -->
+                      <div class="row personal-info-fields">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="jobTitle">المسمى الوظيفي <span class="star-required">*</span></label>
+                                  <select class="form-select form-control" id="jobTitle">
+                                      <option>مصمم ويب</option>
+                                      <option>مطور برمجيات</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="specialization">التخصص <span class="star-required">*</span></label>
+                                  <select class="form-select form-control" id="specialization">
+                                      <option>برمجة وتصميم مواقع وتطبيقات</option>
+                                      <option>تصميم جرافيك</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group personal-info-fields">
+                          <label for="aboutMe">نبذة تعريفية <span class="star-required">*</span></label>
+                          <textarea class="form-control" id="aboutMe" rows="5" placeholder="اكتب وصف تعريفي عن نفسك ......"></textarea>
+                          <small class="form-text-muted">أضف سيرة ذاتية تعرف عن نفسك وتعليمك وخبراتك ومهاراتك</small>
+                      </div>
+                      <div class="form-group personal-info-fields">
+    <label for="skills">المهارات <span class="star-required">*</span></label>
+    <select class="form-control" id="skills" multiple="multiple">
+        <option value="فوتوشوب">فوتوشوب</option>
+        <option value="لغة عربية">لغة عربية</option>
+        <option value="تصميم جرافيك">تصميم جرافيك</option>
+        <option value="برمجة">برمجة</option>
+        <option value="تطوير ويب">تطوير ويب</option>
+        <option value="تسويق رقمي">تسويق رقمي</option>
+        <option value="كتابة محتوى">كتابة محتوى</option>
+        <option value="إدارة مشاريع">إدارة مشاريع</option>
+        <option value="تحليل بيانات">تحليل بيانات</option>
+    </select>
+</div>
+                      <div class="form-group personal-info-fields">
+                          <label for="introVideo">الفيديو التعريفي</label>
+                          <input type="url" class="form-control" id="introVideo" placeholder="أدخل الرابط هنا">
+                          <small class="form-text-muted">رابط لفيديو لك تعرف به عن نفسك من YouTube أو Vimeo</small>
+                      </div>
+
+                      <a href="#" class="change-password-link">تغيير كلمة المرور</a>
+                      <button type="submit" class="save-changes-btn">حفظ التعديلات</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="footer-section">
+                      <h5>روابط</h5>
+                      <ul class="footer-links">
+                          <li><a href="#">ابحث عن عمل</a></li>
+                          <li><a href="#">معرض الأعمال</a></li>
+                          <li><a href="#">مدونة مستقل</a></li>
+                          <li><a href="#">مركز المساعدة</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="footer-section">
+                      <h5>مشاريع</h5>
+                      <ul class="footer-links">
+                          <li><a href="#">مشاريع أعمال</a></li>
+                          <li><a href="#">مشاريع هندسة ومعمارة</a></li>
+                          <li><a href="#">مشاريع تسويق</a></li>
+                          <li><a href="#">مشاريع برمجة</a></li>
+                          <li><a href="#">مشاريع كتابة وترجمة</a></li>
+                          <li><a href="#">مشاريع دعم ومساعدة</a></li>
+                          <li><a href="#">التطبيقات</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="footer-section">
+                      <h5>تلنت فلو</h5>
+                      <ul class="footer-links">
+                          <li><a href="#">عن تلنت فلو</a></li>
+                          <li><a href="#">الأسئلة الشائعة</a></li>
+                          <li><a href="#">ضمان حقوقك</a></li>
+                          <li><a href="#">شروط الاستخدام</a></li>
+                          <li><a href="#">بيان الخصوصية</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="footer-section">
+                      <div class="footer-brand">
+                          <div class="footer-logo">
+                              تلنت فلو
+                              <div class="footer-logo-icon"></div>
+                          </div>
+                          <p class="footer-description">
+                              نوفر منصتنا أفضل البرامج للطلاب لحسابهم الخاص والمطورين، مما يسهل التواصل والتعاون وإنجاز الأعمال
+                          </p>
+                          <div class="social-links">
+                              <a href="#"><i class="fab fa-facebook"></i></a>
+                              <a href="#"><i class="fab fa-youtube"></i></a>
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              Copyright 2024 © - All rights reserved to talent flow
+          </div>
+      </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap 5 JS (for dropdowns, etc. if needed, though not strictly for design) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Select2 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+  <!-- International Telephone Input JS -->
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+  
+  <script>
+      $(document).ready(function() {
+          // Function to toggle personal info fields based on 'freelancer' checkbox
+          function togglePersonalInfoFields() {
+              if ($('#freelancer').is(':checked')) {
+                  $('.personal-info-fields').removeClass('hidden-field');
+              } else {
+                  $('.personal-info-fields').addClass('hidden-field');
+              }
+          }
+
+          // Initial check on page load
+          togglePersonalInfoFields();
+
+          // Listen for changes on the "مستقل" (Freelancer) checkbox
+          $('#freelancer').on('change', function() {
+              togglePersonalInfoFields();
+          });
+
+          // Profile Image Upload Functionality
+          $('#editProfileIcon').on('click', function() {
+              $('#profileImageUpload').click(); // Trigger the hidden file input
+          });
+
+          $('#profileImageUpload').on('change', function(event) {
+              const file = event.target.files[0];
+              if (file) {
+                  const reader = new FileReader();
+                  reader.onload = function(e) {
+                      $('.profile-img').css('background-image', `url('${e.target.result}')`);
+                  };
+                  reader.readAsDataURL(file);
+              }
+          });
+
+          // Populate Date of Birth dropdowns
+          function populateDobDropdowns() {
+              const $daySelect = $('#dobDay');
+              const $monthSelect = $('#dobMonth');
+              const $yearSelect = $('#dobYear');
+
+              // Populate days (1-31)
+              for (let i = 1; i <= 31; i++) {
+                  $daySelect.append($('<option>', {
+                      value: i,
+                      text: i
+                  }));
+              }
+
+              // Populate months (1-12)
+              for (let i = 1; i <= 12; i++) {
+                  $monthSelect.append($('<option>', {
+                      value: i,
+                      text: i.toString().padStart(2, '0') // Format as 01, 02, etc.
+                  }));
+              }
+
+              // Populate years (e.g., from 1900 to current year)
+              const currentYear = new Date().getFullYear();
+              for (let i = currentYear; i >= 1900; i--) {
+                  $yearSelect.append($('<option>', {
+                      value: i,
+                      text: i
+                  }));
+              }
+
+              // Set initial values if needed (e.g., from existing data)
+              $daySelect.val('22');
+              $monthSelect.val('3');
+              $yearSelect.val('1990');
+          }
+
+          populateDobDropdowns();
+
+          // Initialize intl-tel-input
+          const phoneInput = document.querySelector("#phoneNumber");
+          const iti = window.intlTelInput(phoneInput, {
+              initialCountry: "ye", // Yemen as shown in the image
+              preferredCountries: ["ye", "sa", "ae", "us", "gb"],
+              separateDialCode: true,
+              nationalMode: false,
+              autoHideDialCode: false,
+              placeholderNumberType: "MOBILE",
+              utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+          });
+
+          // Update placeholder on country change
+          phoneInput.addEventListener("countrychange", function() {
+              const countryData = iti.getSelectedCountryData();
+              const placeholder = intlTelInputUtils.getExampleNumber(
+                  countryData.iso2,
+                  intlTelInputUtils.numberType.MOBILE,
+                  intlTelInputUtils.numberFormat.INTERNATIONAL
+              );
+              phoneInput.placeholder = placeholder || "+1 (555) 000-0000";
+          });
+
+          // Initialize Select2 for Job Title and Specialization
+          $('#jobTitle').select2({
+              dir: "rtl" // Enable RTL support
+          });
+          $('#specialization').select2({
+              dir: "rtl" // Enable RTL support
+          });
+
+          // Initialize Select2 for Skills (multi-select)
+          $('#skills').select2({
+              placeholder: "أضف مهارة", // Placeholder text
+              tags: true, // Allow adding new tags
+              dir: "rtl" // Enable RTL support
+          });
+
+          // Set initial selected skills if any (e.g., from existing data)
+          // Example: if you want to pre-select 'فوتوشوب' and 'لغة عربية'
+          $('#skills').val(['فوتوشوب', 'لغة عربية', 'تصميم جرافيك']).trigger('change');
+      });
+  </script>
+</body>
+</html>
