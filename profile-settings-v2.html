@@ -1,290 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>معلومات شخصية - تلنت فلو</title>
-  
-  <!-- Bootstrap 5 RTL CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  <!-- Font Awesome for icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <!-- Google Fonts for Arabic -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- External Stylesheet -->
-  <link href="asset/css/rtl_style.css" rel="stylesheet">
-</head>
-<body>
-  <!-- Header -->
-  <header class="header">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6">
-                  <div class="profile-section">
-                      <div class="profile-avatar"></div>
-                      <i class="fas fa-bell header-icon"></i>
-                      <i class="fas fa-envelope header-icon"></i>
-                      <i class="fas fa-plus header-icon"></i>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="logo-section">
-                      <div class="logo">
-                          تلنت فلو
-                          <div class="logo-icon"></div>
-                      </div>
-                      <button class="menu-toggle">
-                          <i class="fas fa-bars"></i>
-                      </button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </header>
-
-  <!-- Main Content -->
-  <main class="main-content-wrapper">
-      <div class="container">
-          <div class="breadcrumb-nav">
-              <a href="#">الرئيسية</a> <i class="fas fa-chevron-left mx-2"></i> <a href="#">إعدادات</a> <i class="fas fa-chevron-left mx-2"></i> <span>معلومات شخصية</span>
-          </div>
-
-          <div class="row">
-              <!-- Right Column: Sidebar and Completion Steps -->
-              <div class="col-lg-4">
-                  <div class="sidebar">
-                      <div class="sidebar-title">الإعدادات</div>
-                      <nav class="sidebar-nav">
-                          <ul>
-                              <li><a href="#"><i class="fas fa-user"></i> الملف الشخصي</a></li>
-                              <li><a href="#"><i class="fas fa-id-card"></i> العضوية</a></li>
-                              <li><a href="#"><i class="fas fa-envelope"></i> البريد الإلكتروني</a></li>
-                              <li><a href="#" class="active"><i class="fas fa-info-circle"></i> معلومات شخصية</a></li>
-                              <li><a href="#"><i class="fas fa-credit-card"></i> البطاقات الائتمانية</a></li>
-                              <li><a href="#"><i class="fas fa-bank"></i> الحسابات البنكية</a></li>
-                              <li><a href="#"><i class="fas fa-check-circle"></i> توثيق الهوية</a></li>
-                              <li><a href="#"><i class="fas fa-file-invoice"></i> كشف حساب</a></li>
-                          </ul>
-                      </nav>
-                  </div>
-
-                  <div class="completion-steps">
-                      <div class="completion-steps-title">خطوات إكمال الحساب</div>
-                      <ul>
-                          <li><span class="step-icon completed"><i class="fas fa-check"></i></span> تأكيد رقم الجوال</li>
-                          <li><span class="step-icon"><i class="fas fa-circle"></i></span> إضافة المهارات</li>
-                          <li><span class="step-icon"><i class="fas fa-circle"></i></span> إضافة أعمال جديدة</li>
-                          <li><span class="step-icon"><i class="fas fa-circle"></i></span> توثيق الهوية</li>
-                      </ul>
-                  </div>
-              </div>
-
-              <!-- Left Column: Profile Edit Form -->
-              <div class="col-lg-8">
-                  <div class="main-form-content">
-                      <div class="profile-header">
-                          <div class="profile-img-container">
-                              <div class="profile-img" style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Desktop%20-%2032-F4tcPKvAJbboIjsGmwbja7disOwVPg.png');"></div>
-                              <div class="edit-icon" onclick="alert('وظيفة تعديل الصورة غير متاحة حاليًا.');"><i class="fas fa-pencil-alt"></i></div>
-                          </div>
-                          <!-- Removed h1.profile-form-title as per request -->
-                      </div>
-
-                      <!-- Removed Account Type section as per request -->
-
-                      <div class="row">
-                          <div class="col-md-6">
-                              <div class="form-group">
-                                  <label for="firstName">الاسم *</label>
-                                  <input type="text" class="form-control" id="firstName" value="فاطمة">
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="form-group">
-                                  <label for="lastName">اسم العائلة *</label>
-                                  <input type="text" class="form-control" id="lastName" value="عبد النبي">
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-md-6">
-                              <div class="form-group">
-                                  <label for="country">الدولة *</label>
-                                  <select class="form-select form-control" id="country">
-                                      <option>اليمن</option>
-                                      <option>السعودية</option>
-                                      <option>مصر</option>
-                                  </select>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="form-group">
-                                  <label for="language">اللغة *</label>
-                                  <select class="form-select form-control" id="language">
-                                      <option>اللغة العربية</option>
-                                      <option>English</option>
-                                  </select>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-md-6">
-                              <div class="form-group">
-                                  <label>تاريخ الميلاد *</label>
-                                  <div class="input-group">
-                                      <select class="form-select form-control">
-                                          <option>22</option>
-                                      </select>
-                                      <select class="form-select form-control">
-                                          <option>03</option>
-                                      </select>
-                                      <select class="form-select form-control">
-                                          <option>1990</option>
-                                      </select>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="form-group">
-                                  <label for="gender">الجنس *</label>
-                                  <select class="form-select form-control" id="gender">
-                                      <option>أنثى</option>
-                                      <option>ذكر</option>
-                                  </select>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <label for="phoneNumber">رقم الجوال *</label>
-                          <div class="input-group">
-                              <select class="form-select input-group-text" style="flex: 0 0 auto; width: auto;">
-                                  <option>+967 🇾🇪</option>
-                                  <option>+966 🇸🇦</option>
-                                  <option>+20 🇪🇬</option>
-                              </select>
-                              <input type="text" class="form-control" id="phoneNumber" value="(555) 000-0000">
-                              <button class="btn btn-info" type="button">تفعيل</button>
-                          </div>
-                      </div>
-
-                      <div class="change-password-section">
-                          <span class="change-password-title">تغيير كلمة المرور</span>
-                          
-                          <div class="password-fields-container">
-                              <div class="form-group" id="currentPasswordGroup">
-                                  <label for="currentPassword">كلمة المرور الحالية</label>
-                                  <input type="password" class="form-control" id="currentPassword" placeholder="ادخل كلمة المرور الخاصة الحالية">
-                              </div>
-                              <a href="#" class="no-password-link" id="noPasswordLink">لا أمتلك كلمة مرور</a>
-                              <div class="new-password-fields">
-                                  <div class="form-group">
-                                      <label for="newPassword">كلمة المرور الجديدة</label>
-                                      <input type="password" class="form-control" id="newPassword" placeholder="ادخل كلمة المرور الجديدة">
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="confirmNewPassword">تأكيد كلمة المرور الجديدة</label>
-                                      <input type="password" class="form-control" id="confirmNewPassword" placeholder="ادخل تأكيد كلمة المرور الجديدة">
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <button type="submit" class="save-changes-btn">حفظ التعديلات</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-3 col-md-6 mb-4">
-                  <div class="footer-section">
-                      <h5>روابط</h5>
-                      <ul class="footer-links">
-                          <li><a href="#">ابحث عن عمل</a></li>
-                          <li><a href="#">معرض الأعمال</a></li>
-                          <li><a href="#">مدونة مستقل</a></li>
-                          <li><a href="#">مركز المساعدة</a></li>
-                      </ul>
-                  </div>
-              </div>
-              <div class="col-lg-3 col-md-6 mb-4">
-                  <div class="footer-section">
-                      <h5>مشاريع</h5>
-                      <ul class="footer-links">
-                          <li><a href="#">مشاريع أعمال</a></li>
-                          <li><a href="#">مشاريع هندسة ومعمارة</a></li>
-                          <li><a href="#">مشاريع تسويق</a></li>
-                          <li><a href="#">مشاريع برمجة</a></li>
-                          <li><a href="#">مشاريع كتابة وترجمة</a></li>
-                          <li><a href="#">مشاريع دعم ومساعدة</a></li>
-                          <li><a href="#">مشاريع تدريب</a></li>
-                          <li><a href="#">التطبيقات</a></li>
-                      </ul>
-                  </div>
-              </div>
-              <div class="col-lg-3 col-md-6 mb-4">
-                  <div class="footer-section">
-                      <h5>تلنت فلو</h5>
-                      <ul class="footer-links">
-                          <li><a href="#">عن تلنت فلو</a></li>
-                          <li><a href="#">الأسئلة الشائعة</a></li>
-                          <li><a href="#">ضمان حقوقك</a></li>
-                          <li><a href="#">شروط الاستخدام</a></li>
-                          <li><a href="#">بيان الخصوصية</a></li>
-                      </ul>
-                  </div>
-              </div>
-              <div class="col-lg-3 col-md-6 mb-4">
-                  <div class="footer-section">
-                      <div class="footer-brand">
-                          <div class="footer-logo">
-                              تلنت فلو
-                              <div class="footer-logo-icon"></div>
-                          </div>
-                          <p class="footer-description">
-                              نوفر منصتنا أفضل البرامج للطلاب لحسابهم الخاص والمطورين، مما يسهل التواصل والتعاون وإنجاز الأعمال
-                          </p>
-                          <div class="social-links">
-                              <a href="#"><i class="fab fa-facebook"></i></a>
-                              <a href="#"><i class="fab fa-youtube"></i></a>
-                              <a href="#"><i class="fab fa-twitter"></i></a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="footer-bottom">
-              Copyright 2024 © - All rights reserved to talent flow
-          </div>
-      </div>
-  </footer>
-
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Bootstrap 5 JS (for dropdowns, etc. if needed, though not strictly for design) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-      $(document).ready(function() {
-          const $newPasswordFields = $('.new-password-fields');
-          const $noPasswordLink = $('#noPasswordLink');
-
-          // Initially hide the new password fields
-          $newPasswordFields.hide();
-
-          // Toggle "لا أمتلك كلمة مرور" fields
-          $noPasswordLink.on('click', function(e) {
-              e.preventDefault();
-              $newPasswordFields.slideToggle(300); // Use slideToggle for open/close behavior
-          });
-      });
-  </script>
-</body>
-</html>
