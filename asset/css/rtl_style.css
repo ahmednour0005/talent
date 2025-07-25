@@ -785,7 +785,7 @@ a{
   padding-right: 6px;
   border-radius: 7px 0 0 7px;
   border-color: #0c7d81;
-  text-align: end;
+  direction: ltr !important;
 }
 
 .phone-input-container {
