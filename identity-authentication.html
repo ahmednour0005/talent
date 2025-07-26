@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توثيق الهوية - تلنت فلو</title>
+
+
+    <!-- Bootstrap 5 RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="asset/css/rtl_style.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="profile-section">
+                        <div class="profile-avatar"
+                            style="background: url('./asset/images/profile.png') center / cover;"></div>
+                        <i class="fas fa-bell header-icon"></i>
+                        <i class="fas fa-envelope header-icon"></i>
+                        <i class="fas fa-globe header-icon"></i>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="logo-section">
+                        <div class="logo">
+                            <img src="asset/images/logo_white.png" alt="">
+                        </div>
+                        <button class="menu-toggle">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content-wrapper">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="#">الرئيسية</a> <i class="fas fa-chevron-left mx-2"></i> <a href="#">إعدادات</a> <i
+                    class="fas fa-chevron-left mx-2"></i> <span>توثيق الهوية</span>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <div class="sidebar-title">الإعدادات</div>
+                        <nav class="sidebar-nav">
+                            <ul>
+                                <li><a href="profile.html"><i class="fas fa-user"></i> الملف الشخصي</a></li>
+                                <li><a href="membership.html"><i class="fas fa-id-card"></i> العضوية</a></li>
+                                <li><a href="profile-email.html"><i class="fas fa-envelope"></i> البريد الإلكتروني</a>
+                                </li>
+                                <li><a href="personal-info.html"><i class="fas fa-info-circle"></i> معلومات شخصية</a>
+                                </li>
+                                <li><a href="credit-cards.html"><i class="fas fa-credit-card"></i> البطاقات
+                                        الائتمانية</a></li>
+                                <li><a href="add-banks-cards.html"><i class="fas fa-bank"></i> الحسابات البنكية</a></li>
+                                <li><a href="identity-authentication.html" class="active"><i class="fas fa-check-circle"></i> توثيق الهوية</a></li>
+                                <li><a href="#"><i class="fas fa-file-invoice"></i> كشف حساب</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="completion-steps">
+                        <div class="completion-steps-title">خطوات إكمال الحساب</div>
+                        <ul>
+                            <li><span class="step-icon"></span> تأكيد رقم الجوال </li>
+                            <li class="completed-text"><span class="step-icon completed"><i
+                                        class="fas fa-check"></i></span> <span class="completed-text-doc"> إضافة
+                                    المهارات </span> </li>
+                            <li><span class="step-icon"></span> إضافة أعمال جديدة</li>
+                            <li><span class="step-icon"></span> توثيق الهوية</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Left Column: Membership Plans and FAQ -->
+                <div class="col-lg-8">
+                    <div class="main-form-content identity-authentication">
+                        <!-- Step 1: Face Scan -->
+                        <div class="wizard-step active" id="step1">
+                            <h1>توثيق الهوية</h1>
+                            <img id="imgStep1" src="asset/images/248604.png" alt="Face Scan Illustration">
+                            <p>للاستمرار في استخدام تلنت فلو يتوجب عليك توثيق هويتك</p>
+                            <button type="button" class="btn btn-primary next-step-btn mt-3">توثيق الهوية</button>
+                        </div>
+
+                        <!-- Step 2: Personal Information Form -->
+                        <div class="wizard-step form-step" id="step2">
+                            <h1>توثيق الهوية</h1>
+                            <p class="text-muted">يرجى إكمال النموذج بالمعلومات لوحيد هويتك الشخصية أو جواز السفر</p>
+                            <form style="width: 100%;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="arabicFirstName">الاسم *</label>
+                                            <input type="text" class="form-control" id="arabicFirstName"
+                                                placeholder="اكتب اسمك هنا باللغة العربية">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="arabicLastName">اسم العائلة *</label>
+                                            <input type="text" class="form-control" id="arabicLastName"
+                                                placeholder="اكتب اسم العائلة هنا باللغة العربية">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="englishFirstName">الاسم (بالأحرف الإنجليزية) *</label>
+                                            <input type="text" class="form-control" id="englishFirstName"
+                                                placeholder="اكتب اسمك هنا باللغة الإنجليزية">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="englishLastName">اسم العائلة (بالأحرف الإنجليزية) *</label>
+                                            <input type="text" class="form-control" id="englishLastName"
+                                                placeholder="اكتب اسم العائلة هنا باللغة الإنجليزية">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="country">الدولة *</label>
+                                            <select class="form-select form-control" id="country">
+                                                <option>اليمن 🇾🇪</option>
+                                                <option>السعودية 🇸🇦</option>
+                                                <option>مصر 🇪🇬</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>تاريخ الميلاد<span class="star-required">*</span></label>
+                                            <div class="input-group">
+                                                <select class="form-select form-control" id="dobDay">
+                                                    <option value="">يوم</option>
+                                                </select>
+                                                <select class="form-select form-control" id="dobMonth">
+                                                    <option value="">شهر</option>
+                                                </select>
+                                                <select class="form-select form-control" id="dobYear">
+                                                    <option value="">سنة</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="dataAccuracyCheck">
+                                    <label class="form-check-label" for="dataAccuracyCheck">
+                                        أعلم أن إدخال بيانات غير صحيحة سيؤدي لإيقاف الحساب
+                                    </label>
+                                </div>
+                                <button type="button" class="btn btn-primary mt-4 next-step-btn">الخطوة التالية</button>
+                            </form>
+                        </div>
+
+                        <!-- Step 3: Upload Front ID -->
+                        <div class="wizard-step" id="step3">
+                            <h1> توثيق الهوية</h1>
+                            <div class="step-upload-container">
+                                <img id="imgStep3"
+                                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%20upload-bro%201-rDQ4Uz8kyZabrSsb32Z8jDLyNDfeMJ.png"
+                                    alt="Upload Illustration">
+                                <p>قم برفع صورة الوجه الأمامي لوثيقة الهوية لتظهر فيها جميع المعلومات واضحة</p>
+                                <input type="file" accept="image/*" capture="camera" style="display: none;"
+                                    id="fileInputStep3">
+                                <div class="upload-btn-row">
+                                    <button type="button" class="btn btn-upload upload-trigger-btn"
+                                        data-target-input="#fileInputStep3" data-target-img="#imgStep3"
+                                        data-original-text="اختر صورة الوجه الأمامي">اختر صورة الوجه الأمامي</button>
+                                    <span class="btn-upload-icon"><i class="fa fa-camera"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Upload Back ID -->
+                        <div class="wizard-step" id="step4">
+                            <h1> توثيق الهوية</h1>
+                            <div class="step-upload-container">
+                                <img id="imgStep4"
+                                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%20upload-bro%201-rDQ4Uz8kyZabrSsb32Z8jDLyNDfeMJ.png"
+                                    alt="Upload Illustration">
+                                <p>قم برفع صورة الوجه الخلفي لوثيقة الهوية لتظهر فيها جميع المعلومات واضحة</p>
+                                <input type="file" accept="image/*" capture="camera" style="display: none;"
+                                    id="fileInputStep4">
+                                <div class="upload-btn-row">
+                                    <button type="button" class="btn btn-upload upload-trigger-btn"
+                                        data-target-input="#fileInputStep4" data-target-img="#imgStep4"
+                                        data-original-text="اختر صورة الوجه الخلفي">اختر صورة الوجه الخلفي</button>
+                                    <span class="btn-upload-icon"><i class="fa fa-camera"></i></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Step 5: Upload Selfie with ID -->
+                        <div class="wizard-step" id="step5">
+                            <h1> توثيق الهوية</h1>
+                            <div class="step-upload-container">
+                                <img id="imgStep5"
+                                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%20upload-bro%201-rDQ4Uz8kyZabrSsb32Z8jDLyNDfeMJ.png"
+                                    alt="Upload Illustration">
+                                <p>قم برفع سيلفي لك مع وثيقة الهوية، حيث تظهر ملامح وجهك بوضوح وكذلك معالم الوثيقة</p>
+                                <input type="file" accept="image/*" capture="camera" style="display: none;"
+                                    id="fileInputStep5">
+                                <div class="upload-btn-row">
+                                    <button type="button" class="btn btn-upload upload-trigger-btn"
+                                        data-target-input="#fileInputStep5" data-target-img="#imgStep5"
+                                        data-original-text="اختر صورة الوجه السيلفي">اختر صورة الوجه السيلفي</button>
+                                    <span class="btn-upload-icon"><i class="fa fa-camera"></i></span>
+                                </div>
+                            </div>
+                            <!-- Step 6: Review Page -->
+                            <div class="wizard-step" id="step6">
+                                <div class="review-box">
+                                    <div class="review-icon"><i class="fa fa-check"></i></div>
+                                    <h2>طلبك قيد المراجعة</h2>
+                                    <p>طلب توثيق هويتك قيد المراجعة، سيصلك إشعار بريدي فور إتمام مراجعة الطلب خلال 24
+                                        ساعة</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Pagination Dots -->
+                        <div class="pagination-dots">
+                            <span class="pagination-dot active" data-step="1"></span>
+                            <span class="pagination-dot" data-step="2"></span>
+                            <span class="pagination-dot" data-step="3"></span>
+                            <span class="pagination-dot" data-step="4"></span>
+                            <span class="pagination-dot" data-step="5"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-5 col-md-5 mb-4">
+                    <div class="footer-section">
+                        <div class="footer-brand">
+                            <div class="footer-logo">
+                                <div class="footer-logo-icon"></div>
+                                تلنت فلو
+                            </div>
+                            <p class="footer-description">
+                                نوفر منصتنا أفضل البرامج للطلاب لحسابهم الخاص <br>
+                                والمطورين، مما يسهل التواصل والتعاون وإنجاز الأعمال
+                            </p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-5 mb-4">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="footer-section">
+                                <h5>تلنت فلو</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">عن تلنت فلو</a></li>
+                                    <li><a href="#">الأسئلة الشائعة</a></li>
+                                    <li><a href="#">ضمان حقوقك</a></li>
+                                    <li><a href="#">شروط الاستخدام</a></li>
+                                    <li><a href="#">بيان الخصوصية</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="footer-section">
+                                <h5>مشاريع</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">مشاريع أعمال</a></li>
+                                    <li><a href="#">مشاريع هندسة ومعمارة</a></li>
+                                    <li><a href="#">مشاريع تسويق</a></li>
+                                    <li><a href="#">مشاريع برمجة</a></li>
+                                    <li><a href="#">مشاريع كتابة وترجمة</a></li>
+                                    <li><a href="#">مشاريع دعم ومساعدة</a></li>
+                                    <li><a href="#">مشاريع تدريب</a></li>
+                                    <li><a href="#">التصنيفات </a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="footer-section">
+                                <h5>روابط</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">ابحث عن عمل</a></li>
+                                    <li><a href="#">معرض الأعمال</a></li>
+                                    <li><a href="#">مدونة مستقل</a></li>
+                                    <li><a href="#">مركز المساعدة</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="footer-bottom">
+                Copyright 2025 © – All rights reserved to talent flow
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap 5 JS (for dropdowns, etc. if needed, though not strictly for design) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <!-- International Telephone Input JS -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+
+    <script>
+        // jQuery plugin for date select (day/month/year)
+        $.fn.dateSelect = function (options) {
+            const settings = $.extend({
+                daySelector: '#dobDay',
+                monthSelector: '#dobMonth',
+                yearSelector: '#dobYear',
+                defaultDay: '',
+                defaultMonth: '',
+                defaultYear: '',
+                minYear: 1900,
+                maxYear: new Date().getFullYear()
+            }, options);
+
+            // Populate days
+            const $day = $(settings.daySelector);
+            $day.empty().append('<option value="">يوم</option>');
+            for (let i = 1; i <= 31; i++) {
+                $day.append($('<option>', { value: i, text: i }));
+            }
+            if (settings.defaultDay) $day.val(settings.defaultDay);
+
+            // Populate months
+            const $month = $(settings.monthSelector);
+            $month.empty().append('<option value="">شهر</option>');
+            for (let i = 1; i <= 12; i++) {
+                $month.append($('<option>', { value: i, text: i.toString().padStart(2, '0') }));
+            }
+            if (settings.defaultMonth) $month.val(settings.defaultMonth);
+
+            // Populate years
+            const $year = $(settings.yearSelector);
+            $year.empty().append('<option value="">سنة</option>');
+            for (let i = settings.maxYear; i >= settings.minYear; i--) {
+                $year.append($('<option>', { value: i, text: i }));
+            }
+            if (settings.defaultYear) $year.val(settings.defaultYear);
+        };
+
+        // jQuery plugin for country select
+        $.fn.countriesSelect = function (options) {
+            const settings = $.extend({
+                countries: [
+                    { name: 'اليمن', code: 'YE', flag: '🇾🇪' },
+                    { name: 'السعودية', code: 'SA', flag: '🇸🇦' },
+                    { name: 'مصر', code: 'EG', flag: '🇪🇬' },
+                    { name: 'الإمارات', code: 'AE', flag: '🇦🇪' },
+                    { name: 'قطر', code: 'QA', flag: '🇶🇦' },
+                    { name: 'الكويت', code: 'KW', flag: '🇰🇼' },
+                    { name: 'عمان', code: 'OM', flag: '🇴🇲' },
+                    { name: 'الأردن', code: 'JO', flag: '🇯🇴' },
+                    { name: 'العراق', code: 'IQ', flag: '🇮🇶' },
+                    { name: 'سوريا', code: 'SY', flag: '🇸🇾' },
+                    { name: 'لبنان', code: 'LB', flag: '🇱🇧' },
+                    { name: 'فلسطين', code: 'PS', flag: '🇵🇸' },
+                    { name: 'الجزائر', code: 'DZ', flag: '🇩🇿' },
+                    { name: 'المغرب', code: 'MA', flag: '🇲🇦' },
+                    { name: 'تونس', code: 'TN', flag: '🇹🇳' },
+                    { name: 'ليبيا', code: 'LY', flag: '🇱🇾' },
+                    { name: 'السودان', code: 'SD', flag: '🇸🇩' },
+                    { name: 'موريتانيا', code: 'MR', flag: '🇲🇷' },
+                    { name: 'الصومال', code: 'SO', flag: '🇸🇴' },
+                    { name: 'جيبوتي', code: 'DJ', flag: '🇩🇯' },
+                    { name: 'جزر القمر', code: 'KM', flag: '🇰🇲' },
+                    { name: 'تركيا', code: 'TR', flag: '🇹🇷' },
+                    { name: 'فرنسا', code: 'FR', flag: '🇫🇷' },
+                    { name: 'ألمانيا', code: 'DE', flag: '🇩🇪' },
+                    { name: 'بريطانيا', code: 'GB', flag: '🇬🇧' },
+                    { name: 'أمريكا', code: 'US', flag: '🇺🇸' },
+                    { name: 'إيطاليا', code: 'IT', flag: '🇮🇹' },
+                    { name: 'إسبانيا', code: 'ES', flag: '🇪🇸' },
+                    { name: 'الهند', code: 'IN', flag: '🇮🇳' },
+                    { name: 'الصين', code: 'CN', flag: '🇨🇳' },
+                    { name: 'روسيا', code: 'RU', flag: '🇷🇺' },
+                    { name: 'اليابان', code: 'JP', flag: '🇯🇵' },
+                    { name: 'كوريا الجنوبية', code: 'KR', flag: '🇰🇷' },
+                    { name: 'البرازيل', code: 'BR', flag: '🇧🇷' },
+                    { name: 'كندا', code: 'CA', flag: '🇨🇦' },
+                    { name: 'أستراليا', code: 'AU', flag: '🇦🇺' }
+                ],
+                defaultCountry: ''
+            }, options);
+            this.empty();
+            this.append('<option value="">اختر الدولة</option>');
+            settings.countries.forEach(function (country) {
+                const option = $('<option>', {
+                    value: country.code,
+                    text: country.name + ' ' + country.flag
+                });
+                if (settings.defaultCountry && settings.defaultCountry === country.code) {
+                    option.prop('selected', true);
+                }
+                this.append(option);
+            }.bind(this));
+            return this;
+        };
+
+        $(document).ready(function () {
+            // Initialize date select plugin
+            $('body').dateSelect({
+                daySelector: '#dobDay',
+                monthSelector: '#dobMonth',
+                yearSelector: '#dobYear',
+                defaultDay: '',
+                defaultMonth: '',
+                defaultYear: '',
+                minYear: 1900,
+                maxYear: new Date().getFullYear()
+            });
+
+            // Initialize countries select plugin
+            $('#country').countriesSelect({
+                defaultCountry: '' // set to code if you want default
+            });
+
+            // ...existing code...
+            let currentStep = 1;
+            const totalSteps = 5;
+
+            function showStep(stepNum) {
+                $('.wizard-step').removeClass('active');
+                $(`#step${stepNum}`).addClass('active');
+
+                $('.pagination-dot').removeClass('active');
+                $(`.pagination-dot[data-step="${stepNum}"]`).addClass('active');
+
+                // Update completion steps sidebar - "توثيق الهوية" is the 4th item
+                $('.completion-steps li:nth-child(4) .step-icon').addClass('completed').find('i').removeClass('fa-circle').addClass('fa-check');
+
+                // For upload steps, disable next button until image is selected
+                if ([3, 4, 5].includes(stepNum)) {
+                    const $currentStep = $(`#step${stepNum}`);
+                    const $nextButton = $currentStep.find('.next-step-btn');
+                    const $imgElement = $currentStep.find('img');
+
+                    // Check if the image src is still the placeholder or if a file has been selected
+                    if ($imgElement.attr('src').includes('ogOP8.png')) { // Check against the default placeholder for upload steps
+                        $nextButton.prop('disabled', true);
+                    } else {
+                        $nextButton.prop('disabled', false);
+                    }
+                }
+            }
+
+            // Initial display
+            showStep(currentStep);
+
+            // Handle next step button clicks
+            $('.next-step-btn').on('click', function () {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showStep(currentStep);
+                } else {
+                    // This is the last step's button, handle form submission
+                    alert('تم إكمال نموذج توثيق الهوية!');
+                    // يمكنك إضافة منطق إرسال النموذج الفعلي هنا
+                }
+            });
+
+            // Handle pagination dot clicks
+            $('.pagination-dot').on('click', function () {
+                const step = $(this).data('step');
+                currentStep = step;
+                showStep(currentStep);
+            });
+
+            // Handle upload button clicks to trigger file input
+            $('.upload-trigger-btn').on('click', function () {
+                const targetInputId = $(this).data('target-input');
+                $(targetInputId).trigger('click');
+            });
+
+            // Handle file input change for image preview and auto-next
+            $('input[type="file"]').on('change', function () {
+                const file = this.files[0];
+                const $button = $(this).closest('.upload-btn-row').find('.upload-trigger-btn');
+                const $imgElement = $($button.data('target-img'));
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        $imgElement.attr('src', e.target.result);
+                        $button.text($button.data('original-text'));
+                        // Automatically advance to next step after upload
+                        setTimeout(function () {
+                            if (currentStep < 5) {
+                                currentStep++;
+                                showStep(currentStep);
+                            } else {
+                                // Go directly to review.html after last upload
+                                window.location.href = 'profile-review.html';
+                            }
+                        }, 500);
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    $imgElement.attr('src', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%20upload-bro%201-rDQ4Uz8kyZabrSsb32Z8jDLyNDfeMJ.png');
+                    $button.text($button.data('original-text'));
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
