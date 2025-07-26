@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>العضوية - تلنت فلو</title>
+
+
+<!-- Bootstrap 5 RTL CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+<!-- Select2 CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<!-- Font Awesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Google Fonts for Arabic -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- intl-tel-input CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="asset/css/rtl_style.css">
+<style>
+    .work-form-card {
+        background: #f7f7f9;
+        border-radius: 18px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        padding: 32px 32px 24px 32px;
+        margin-bottom: 24px;
+        border: none;
+        max-width: 900px;
+        margin: 40px auto;
+    }
+    .work-form-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 24px;
+        text-align: right;
+    }
+    .work-form-label {
+        font-size: 16px;
+        font-weight: 500;
+        color: #222;
+        margin-bottom: 8px;
+        display: block;
+        text-align: right;
+    }
+    .work-form-input, .work-form-textarea, .work-form-select {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        margin-bottom: 18px;
+        font-size: 15px;
+        background: #fff;
+        text-align: right;
+    }
+    .work-form-textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+    .work-form-upload {
+        background: #f7f7f9;
+        border: 2px dashed #e0e0e0;
+        border-radius: 12px;
+        padding: 32px 0;
+        text-align: center;
+        margin-bottom: 18px;
+        cursor: pointer;
+        transition: border-color 0.2s;
+    }
+    .work-form-upload:hover {
+        border-color: #009688;
+    }
+    .work-form-upload input[type="file"] {
+        display: none;
+    }
+    .work-form-upload-icon {
+        font-size: 32px;
+        color: #888;
+        margin-bottom: 8px;
+    }
+    .work-form-upload-text {
+        color: #009688;
+        font-size: 16px;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 4px;
+    }
+    .work-form-upload-desc {
+        color: #888;
+        font-size: 13px;
+    }
+    .work-form-preview {
+        margin-bottom: 18px;
+        text-align: center;
+    }
+    .work-form-preview img {
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .work-form-btn {
+        background: #009688;
+        color: #fff;
+        border-radius: 8px;
+        padding: 12px 0;
+        font-size: 18px;
+        font-weight: 500;
+        border: none;
+        width: 100%;
+        margin-top: 12px;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .work-form-btn:hover {
+        background: #00796b;
+    }
+    .work-form-row {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+    .work-form-col {
+        flex: 1;
+        min-width: 220px;
+    }
+    .work-form-required {
+        color: #d32f2f;
+        margin-right: 4px;
+    }
+    @media (max-width: 600px) {
+        .work-form-card {
+            padding: 16px 8px;
+        }
+    }
+    /* RTL support for form */
+    .work-form-card * {
+        direction: rtl;
+    }
+    .work-form-upload {
+        direction: rtl;
+    }
+    .work-form-label, .work-form-input, .work-form-textarea, .work-form-select {
+        direction: rtl;
+    }
+    .work-form-btn {
+        direction: rtl;
+    }
+    .work-form-row {
+        direction: rtl;
+    }
+    .work-form-col {
+        direction: rtl;
+    }
+    .work-form-preview {
+        direction: rtl;
+    }
+    .work-form-upload-text, .work-form-upload-desc {
+        direction: rtl;
+    }
+    .work-form-title {
+        direction: rtl;
+    }
+    .work-form-required {
+        direction: rtl;
+    }
+    /* End form styles */
+</style>
+
+
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-md-8">
+              <div class="profile-section">
+                 <div class="profile-avatar" style="background: url('./asset/images/profile.png') center / cover;"></div>
+                  <i class="fas fa-bell header-icon"></i>
+                  <i class="fas fa-envelope header-icon"></i>
+                  <i class="fas fa-globe header-icon"></i>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="logo-section">
+                  <div class="logo">
+                        <img src="asset/images/logo_white.png" alt="">
+                  </div>
+                  <button class="menu-toggle">
+                      <span class="hamburger-line"></span>
+                      <span class="hamburger-line"></span>
+                      <span class="hamburger-line"></span>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+
+    <!-- Main Content -->
+   <!-- Main Content -->
+   <main class="main-content-wrapper">
+    <div class="container">
+        <div class="breadcrumb-nav">
+            <a href="#">الرئيسية</a> <i class="fas fa-chevron-left mx-2"></i> <a href="#">اعمالى </a>
+        </div>
+
+        <div class="row">
+            <form class="work-form-card" onsubmit="submitWorkForm(event)">
+                <div class="work-form-title">إضافة عمل</div>
+                <label class="work-form-label">عنوان العمل <span class="work-form-required">*</span></label>
+                <input type="text" class="work-form-input" placeholder="اكتب هنا اسم العمل" required>
+
+                <label class="work-form-label">صورة مصغرة <span class="work-form-required">*</span></label>
+                <div class="work-form-upload" onclick="document.getElementById('workThumbInput').click()">
+                    <span class="work-form-upload-icon"><i class="fas fa-cloud-upload-alt"></i></span>
+                    <span class="work-form-upload-text">اضغط هنا للتحميل أو السحب</span>
+                    <span class="work-form-upload-desc">SVG, PNG, JPG or GIF (max: 800x400px)</span>
+                    <input type="file" id="workThumbInput" accept="image/*" onchange="previewWorkThumb(event)">
+                </div>
+                <div class="work-form-preview" id="workThumbPreview"></div>
+
+                <label class="work-form-label">وصف العمل <span class="work-form-required">*</span></label>
+                <textarea class="work-form-textarea" placeholder="اكتب وصف العمل ..." required></textarea>
+
+                <label class="work-form-label">صور ومرفقات العمل <span class="work-form-required">*</span></label>
+                <div class="work-form-upload" onclick="document.getElementById('workImagesInput').click()">
+                    <span class="work-form-upload-icon"><i class="fas fa-cloud-upload-alt"></i></span>
+                    <span class="work-form-upload-text">اضغط هنا للتحميل أو السحب</span>
+                    <span class="work-form-upload-desc">SVG, PNG, JPG or GIF (max: 800x400px)</span>
+                    <input type="file" id="workImagesInput" accept="image/*" multiple onchange="previewWorkImages(event)">
+                </div>
+                <div class="work-form-preview" id="workImagesPreview"></div>
+
+                <label class="work-form-label">رابط العمل</label>
+                <input type="url" class="work-form-input" placeholder="ضع الرابط هنا">
+
+                <div class="work-form-row">
+                    <div class="work-form-col">
+                        <label class="work-form-label">تاريخ الإصدار</label>
+                        <input type="date" class="work-form-input">
+                    </div>
+                    <div class="work-form-col">
+                        <label class="work-form-label">التخصصات</label>
+                        <select class="work-form-select">
+                            <option>اختر تخصصك</option>
+                            <option>برمجة</option>
+                            <option>تصميم</option>
+                            <option>تسويق</option>
+                            <option>كتابة وترجمة</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="work-form-btn">حفظ</button>
+            </form>
+        </div>
+        <script>
+            function previewWorkThumb(event) {
+                var reader = new FileReader();
+                reader.onload = function(){
+                    var output = document.getElementById('workThumbPreview');
+                    output.innerHTML = '<img src="' + reader.result + '" />';
+                };
+                if(event.target.files[0]) reader.readAsDataURL(event.target.files[0]);
+            }
+            function previewWorkImages(event) {
+                var output = document.getElementById('workImagesPreview');
+                output.innerHTML = '';
+                Array.from(event.target.files).forEach(function(file) {
+                    var reader = new FileReader();
+                    reader.onload = function(){
+                        output.innerHTML += '<img src="' + reader.result + '" style="margin:4px;" />';
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+            function submitWorkForm(e) {
+                e.preventDefault();
+                alert('تم حفظ العمل بنجاح (تجريبي)');
+            }
+        </script>
+    </div>
+</main>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container">
+          <div class="row">
+
+            <div class="col-lg-5 col-md-5 mb-4">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="footer-logo-icon"></div>
+                            تلنت فلو
+                        </div>
+                        <p class="footer-description">
+                          نوفر منصتنا أفضل البرامج للطلاب لحسابهم الخاص  <br> 
+                             والمطورين، مما يسهل التواصل والتعاون وإنجاز الأعمال
+                        </p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-5 mb-4">
+                <div class="row">
+                    
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h5>تلنت فلو</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">عن تلنت فلو</a></li>
+                                <li><a href="#">الأسئلة الشائعة</a></li>
+                                <li><a href="#">ضمان حقوقك</a></li>
+                                <li><a href="#">شروط الاستخدام</a></li>
+                                <li><a href="#">بيان الخصوصية</a></li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h5>مشاريع</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">مشاريع أعمال</a></li>
+                                <li><a href="#">مشاريع هندسة ومعمارة</a></li>
+                                <li><a href="#">مشاريع تسويق</a></li>
+                                <li><a href="#">مشاريع برمجة</a></li>
+                                <li><a href="#">مشاريع كتابة وترجمة</a></li>
+                                <li><a href="#">مشاريع دعم ومساعدة</a></li>
+                                <li><a href="#">مشاريع تدريب</a></li>
+                                <li><a href="#">التصنيفات </a></li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                      <div class="col-lg-4 col-md-6 mb-4">
+                          <div class="footer-section">
+                              <h5>روابط</h5>
+                              <ul class="footer-links">
+                                  <li><a href="#">ابحث عن عمل</a></li>
+                                  <li><a href="#">معرض الأعمال</a></li>
+                                  <li><a href="#">مدونة مستقل</a></li>
+                                  <li><a href="#">مركز المساعدة</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                </div>
+            </div>
+
+          
+         
+         
+          </div>
+          <div class="footer-bottom">
+            Copyright 2025 © – All rights reserved to talent flow
+          </div>
+      </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap 5 JS (for dropdowns, etc. if needed, though not strictly for design) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Select2 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+</body>
+</html>

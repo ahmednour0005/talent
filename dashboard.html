@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العضوية - تلنت فلو</title>
+
+
+    <!-- Bootstrap 5 RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="asset/css/rtl_style.css">
+    <style>
+        .recent-projects-card {
+            background: #f5f5f6;
+            border-radius: 18px;
+        }
+
+        .recent-projects-card .recent-title {
+            padding: 18px 18px 15px;
+        }
+
+        .recent-projects-card .recent-title span {
+            font-size: 20px;
+            color: #222;
+        }
+
+        .recent-projects-card .recent-divider {
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .recent-projects-card .recent-list {
+           padding-bottom: 40px;
+        }
+
+        .recent-projects-card .recent-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .recent-projects-card .recent-item:last-child {
+            border-bottom: none;
+        }
+
+        .recent-projects-card .recent-name {
+            flex: 1;
+            color: #009688;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .recent-projects-card .recent-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .recent-projects-card .recent-meta span {
+            color: #494949;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .recent-projects-card .recent-meta i {
+            font-size: 14px;
+            color: #2F384C;
+        }
+
+        .profile-card {
+            background: #f5f5f6;
+            border-radius: 18px;
+            padding: 20px 0 0 0;
+            text-align: center;
+            margin-bottom: 24px;
+            border: none;
+            width: 100%;
+        }
+
+        .profile-card .profile-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: url('./asset/images/profile.png') center / cover no-repeat;
+            margin: 0 auto 13px auto;
+            display: block;
+        }
+
+        .profile-card .profile-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 12px;
+        }
+
+        .profile-card .profile-divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 18px 0 0 0;
+        }
+
+        .profile-card .edit-profile-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 18px 0 20px 0;
+        }
+
+        .profile-card .edit-profile-text {
+            font-size: 17px;
+            color: #222;
+            font-weight: 700;
+        }
+
+        .profile-card .edit-profile-icon {
+            font-size: 18px;
+            color: #009688;
+        }
+
+
+        .messages-card {
+            background: #f5f5f6;
+            border-radius: 18px;
+            text-align: center;
+            padding: 32px 0 0 0;
+            margin-bottom: 24px;
+            border: none;
+            margin-top: 24px;
+        }
+
+        .messages-card .messages-title {
+            font-size: 22px;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .messages-card .messages-count {
+            font-size: 32px;
+            color: #222;
+            margin-bottom: 12px;
+        }
+
+        .messages-card .messages-divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 18px 0 0 0;
+        }
+
+        .messages-card .messages-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 18px 0 0 0;
+            padding-bottom: 20px;
+        }
+
+        .messages-card .messages-col {
+            flex: 1;
+            text-align: center;
+            font-size: 16px;
+            color: #222;
+            font-weight: 400;
+        }
+
+        .messages-card .messages-col:not(:last-child) {
+            border-left: 1px solid #e0e0e0;
+        }
+
+        .messages-card .messages-label {
+            font-size: 15px;
+            color: #888;
+            font-weight: 400;
+        }
+
+        .messages-card .messages-num {
+            font-size: 17px;
+            font-weight: bold;
+            color: #515151;
+            margin-left: 4px;
+        }
+
+
+        .jobs-card {
+            background: #f5f5f6;
+            border-radius: 18px;
+            text-align: center;
+            padding: 32px 0 0 0;
+            margin-bottom: 24px;
+            border: none;
+        }
+
+        .jobs-card .jobs-title {
+            font-size: 22px;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .jobs-card .jobs-count {
+            font-size: 32px;
+            color: #222;
+            margin-bottom: 12px;
+        }
+
+        .jobs-card .jobs-divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 18px 0 0 0;
+        }
+
+        .jobs-card .add-job-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 18px 0 0 0;
+            padding-bottom: 20px;
+        }
+
+        .jobs-card .add-job-text {
+            font-size: 18px;
+            color: #009688;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .jobs-card .add-job-icon {
+            font-size: 22px;
+            color: #009688;
+        }
+
+        .blog-card {
+            background: #f5f5f6;
+            border-radius: 18px;
+            padding: 24px 0 0 0;
+            margin-bottom: 24px;
+            border: none;
+        }
+
+        .blog-card .blog-title {
+            font-size: 19px;
+            color: #222;
+            margin-bottom: 12px;
+            padding: 0 15px;
+        }
+
+        .blog-card .blog-divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 12px 0 0 0;
+        }
+
+        .blog-card .blog-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .blog-card .blog-item {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .blog-card .blog-item:last-child {
+            border-bottom: none;
+        }
+
+        .blog-card .blog-link {
+            color: #009688;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .blog-card .blog-meta {
+            color: #888;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .blog-card .blog-meta i {
+            font-size: 16px;
+            color: #2F384C;
+        }
+
+        .balance-balance {
+            background: #f5f5f6;
+            border-radius: 18px;
+            padding: 32px 0 24px 0;
+            margin-bottom: 24px;
+            border: none;
+        }
+
+        .balance-section {
+            border: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .balance-card {
+            flex: 1;
+            text-align: center;
+            padding: 0 0 0 0;
+        }
+
+        .balance-card:first-child {
+            border-left: none;
+        }
+
+        .balance-label {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .balance-label.balance-secondary {
+            color: #888;
+        }
+
+        .balance-label.balance-primary {
+            color: #009688;
+        }
+
+        .balance-values {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 8px;
+            margin-top: 20px;
+        }
+
+        .balance-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .balance-currency {
+            font-size: 28px;
+            font-weight: bold;
+            color: #009688;
+            margin-left: 4px;
+        }
+
+        .balance-currency.balance-secondary {
+            color: #888;
+        }
+
+        .balance-divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 18px 0 0 0;
+        }
+
+        .balance-footer {
+            padding: 16px 32px 0 32px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #888;
+            text-align: center;
+        }
+
+        .balance-footer .balance-footer-label {
+            color: #888;
+            font-weight: 400;
+        }
+
+        .balance-footer .balance-footer-value {
+            color: #222;
+            font-weight: bold;
+            margin-left: 4px;
+        }
+
+        .offers-card {
+            background: #f5f5f6;
+            border-radius: 18px;
+            /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); */
+            padding: 35px 15px 25px 25px;
+            margin-bottom: 24px;
+            border: none;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .offers-details {
+            flex: 1.5;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .offers-row {
+            display: flex;
+            gap: 24px;
+        }
+
+        .offers-col {
+            flex: 1;
+            margin-bottom: 18px;
+        }
+
+        .offers-label {
+            font-size: 15px;
+            color: #888;
+            margin-bottom: 2px;
+        }
+
+        .offers-value {
+            font-size: 15px;
+            color: #222;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .offers-progress {
+            width: 100%;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 2px;
+            overflow: hidden;
+        }
+
+        .offers-progress-bar {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .offers-progress-bar.bg-main {
+            background: #009688;
+        }
+
+        .offers-progress-bar.bg-danger {
+            background: #d32f2f;
+        }
+
+        .offers-progress-bar.bg-gray {
+            background: #e0e0e0;
+        }
+
+        .offers-summary {
+            flex: 0.7;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 12px;
+            padding-top: 16px;
+        }
+
+        .offers-title {
+            font-size: 24px;
+            color: #222;
+            margin-bottom: 0;
+        }
+
+        .offers-count {
+            font-size: 24px;
+            color: #222;
+            margin-bottom: 0;
+        }
+
+        .offers-btn {
+            background: #009688;
+            color: #fff;
+            border-radius: 8px;
+            padding: 8px 18px;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            margin: auto;
+        }
+
+        .offers-btn i {
+            font-size: 20px;
+        }
+
+        .dlivered-span {
+            height: 50px;
+            color: #D8D8D8;
+            background: #D8D8D8;
+            width: 1px;
+        }
+
+        .summary-progress {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="profile-section">
+                        <div class="profile-avatar"
+                            style="background: url('./asset/images/profile.png') center / cover;"></div>
+                        <i class="fas fa-bell header-icon"></i>
+                        <i class="fas fa-envelope header-icon"></i>
+                        <i class="fas fa-globe header-icon"></i>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="logo-section">
+                        <div class="logo">
+                            <img src="asset/images/logo_white.png" alt="">
+                        </div>
+                        <button class="menu-toggle">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="main-content-wrapper dashbord ">
+        <div class="container-fluid" style="    padding: 0 130px;">
+            <div class="breadcrumb-nav">
+                <a href="#">الرئيسية</a> <i class="fas fa-chevron-left mx-2"></i> <a href="#">لوحة التحكم</a>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-section">
+                        <div class="profile-card">
+                            <div class="profile-avatar"></div>
+                            <div class="profile-name">عبد الرحمن فؤاد</div>
+                            <div class="profile-divider"></div>
+                            <div class="edit-profile-row">
+                                <a href="#">
+                                    <span class="edit-profile-icon"><i class="fas fa-pen"></i></span>
+                                    <span class="edit-profile-text">تعديل للملف الشخصي</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="completion-steps">
+                        <div class="completion-steps-title">خطوات إكمال الحساب</div>
+                        <ul>
+                            <li><span class="step-icon"></span> تأكيد رقم الجوال </li>
+                            <li class="completed-text"><span class="step-icon completed"><i
+                                        class="fas fa-check"></i></span> <span class="completed-text-doc"> إضافة
+                                    المهارات </span> </li>
+                            <li><span class="step-icon"></span> إضافة أعمال جديدة</li>
+                            <li><span class="step-icon"></span> توثيق الهوية</li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="messages-card ">
+                        <div class="messages-title">الرسائل الجديدة</div>
+                        <div class="messages-count">0</div>
+                        <div class="messages-divider"></div>
+                        <div class="messages-row">
+                            <div class="messages-col">
+                                <span class="messages-label">الرسائل الواردة</span>
+                                <span class="messages-num">1</span>
+                            </div>
+                            <div class="messages-col">
+                                <span class="messages-label">الرسائل الصادرة</span>
+                                <span class="messages-num">1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="jobs-card">
+                        <div class="jobs-title">أعمالى</div>
+                        <div class="jobs-count">0</div>
+                        <div class="jobs-divider"></div>
+                        <div class="add-job-row">
+                            <a href="#">
+                                <span class="add-job-icon">+</span>
+                                <span class="add-job-text">إضافة عمل</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-title">مدونة تلنت فلو</div>
+                        <div class="blog-divider"></div>
+                        <ul class="blog-list">
+                            <li class="blog-item">
+                                <a href="#" class="blog-link">اخر مشاريع برمجة تطوير الواقع والتطبيقات</a>
+                                <div class="blog-meta">
+                                    <i class="fas fa-clock"></i>
+                                    <span>نشر منذ شهر و 3 ايام</span>
+                                </div>
+                            </li>
+                            <li class="blog-item">
+                                <a href="#" class="blog-link">اخر مشاريع برمجة تطوير الواقع والتطبيقات</a>
+                                <div class="blog-meta">
+                                    <i class="fas fa-clock"></i>
+                                    <span>نشر منذ شهر و 3 ايام</span>
+                                </div>
+                            </li>
+                            <li class="blog-item">
+                                <a href="#" class="blog-link">اخر مشاريع برمجة تطوير الواقع والتطبيقات</a>
+                                <div class="blog-meta">
+                                    <i class="fas fa-clock"></i>
+                                    <span>نشر منذ شهر و 3 ايام</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-md-8">
+
+                    <div class="balance-balance">
+                        <div class="balance-section">
+                            <div class="balance-card">
+                                <div class="balance-label balance-primary">الرصيد الكلي</div>
+                                <div class="balance-values">
+                                    <span class="balance-value"> 0.00 $</span>
+                                    <span class="dlivered-span"></span>
+                                    <span class="balance-value balance-currency"> 0.00 ﷼</span>
+                                </div>
+                            </div>
+                            <div class="balance-card">
+                                <div class="balance-label balance-secondary">الرصيد القابل للسحب</div>
+                                <div class="balance-values">
+                                    <span class="balance-value"> 0.00 $</span>
+                                    <span class="dlivered-span"></span>
+                                    <span class="balance-value balance-currency balance-secondary"> 0.00 ﷼</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="balance-divider"></div>
+                        <div class="row balance-footer">
+                            <div class="col-6">
+                                <div>
+                                    <span class="balance-footer-label">الرصيد المعلق</span>
+                                    <span class="balance-footer-value"> 0:00$</span>
+                                </div>
+
+                            </div>
+                            <div class="col-6">
+
+                                <div>
+                                    <span class="balance-footer-label">الرصيد الناتج</span>
+                                    <span class="balance-footer-value"> 0:00$</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offers-card mt-2">
+                        <div class="offers-summary">
+                            <div class="offers-title">عروض متاحة</div>
+                            <div class="offers-count">10</div>
+                            <button class="offers-btn"><i class="fa-regular fa-calendar"></i> إعدادات العضوية</button>
+                        </div>
+                        <div class="offers-details">
+                            <div class="offers-row">
+                                <div class="offers-col">
+                                    <div class="summary-progress">
+                                        <div class="offers-label">عروض من الخطة</div>
+                                        <div class="offers-value">10/10</div>
+                                    </div>
+
+                                    <div class="offers-progress">
+                                        <div class="offers-progress-bar bg-main" style="width:100%"></div>
+                                    </div>
+                                </div>
+                                <div class="offers-col">
+                                    <div class="summary-progress">
+                                        <div class="offers-label">عروض إضافية</div>
+                                        <div class="offers-value">0</div>
+                                    </div>
+                                    <div class="offers-progress">
+                                        <div class="offers-progress-bar bg-gray" style="width:0%"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="offers-row">
+                                <div class="offers-col">
+                                    <div class="summary-progress">
+                                        <div class="offers-label"> 0 بانتظار الموافقة </div>
+                                        <div class="offers-value"> 0%</div>
+                                    </div>
+
+                                    <div class="offers-progress">
+                                        <div class="offers-progress-bar bg-gray" style="width:0%"></div>
+                                    </div>
+                                </div>
+                                <div class="offers-col">
+                                    <div class="summary-progress">
+                                        <div class="offers-label">قيد التنفيذ 0</div>
+                                        <div class="offers-value"> 0%</div>
+                                    </div>
+                                    <div class="offers-progress">
+                                        <div class="offers-progress-bar bg-gray" style="width:0%"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="offers-row">
+                                <div class="offers-col">
+                                    <div class="summary-progress">
+                                        <div class="offers-label">0 مكتملة </div>
+                                        <div class="offers-value"> 0%</div>
+                                    </div>
+                                    <div class="offers-progress">
+                                        <div class="offers-progress-bar bg-gray" style="width:0%"></div>
+                                    </div>
+                                </div>
+                                <div class="offers-col">
+                                    <div class="summary-progress">
+                                        <div class="offers-label">1 مستبعدة </div>
+                                        <div class="offers-value"> 100%</div>
+                                    </div>
+                                    <div class="offers-progress">
+                                        <div class="offers-progress-bar bg-danger" style="width:100%"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="recent-projects-card">
+                        <div class="recent-title">
+                            <span>اخر مشاريع برمجة تطوير الواقع والتطبيقات</span>
+                        </div>
+                        <div>
+                            <div class="recent-divider"></div>
+                            <div class="recent-list">
+                                <!-- Repeat this block for each project -->
+                                <div class="recent-item">
+                                    <div class="recent-name">اخر مشاريع برمجة تطوير الواقع والتطبيقات</div>
+                                    <div class="recent-meta">
+                                        <span><i class="fas fa-clock"></i> منذ 27 دقيقة</span>
+                                        <span><i class="fas fa-user"></i> نسرين</span>
+                                        <span><i class="fas fa-flag"></i> عرض واحد</span>
+                                    </div>
+                                </div>
+                                <!-- Repeat end -->
+                                <!-- You can copy the above block to show more projects as in the screenshot -->
+                                <div class="recent-item">
+                                    <div class="recent-name">اخر مشاريع برمجة تطوير الواقع والتطبيقات</div>
+                                    <div class="recent-meta">
+                                        <span><i class="fas fa-clock"></i> منذ 27 دقيقة</span>
+                                        <span><i class="fas fa-user"></i> نسرين</span>
+                                        <span><i class="fas fa-flag"></i> عرض واحد</span>
+                                    </div>
+                                </div>
+                                <!-- Add more items as needed -->
+                                <div class="recent-item">
+                                    <div class="recent-name">اخر مشاريع برمجة تطوير الواقع والتطبيقات</div>
+                                    <div class="recent-meta">
+                                        <span><i class="fas fa-clock"></i> منذ 27 دقيقة</span>
+                                        <span><i class="fas fa-user"></i> نسرين</span>
+                                        <span><i class="fas fa-flag"></i> عرض واحد</span>
+                                    </div>
+                                </div>
+                                <div class="recent-item">
+                                    <div class="recent-name">اخر مشاريع برمجة تطوير الواقع والتطبيقات</div>
+                                    <div class="recent-meta">
+                                        <span><i class="fas fa-clock"></i> منذ 27 دقيقة</span>
+                                        <span><i class="fas fa-user"></i> نسرين</span>
+                                        <span><i class="fas fa-flag"></i> عرض واحد</span>
+                                    </div>
+                                </div>
+                                <div class="recent-item">
+                                    <div class="recent-name">اخر مشاريع برمجة تطوير الواقع والتطبيقات</div>
+                                    <div class="recent-meta">
+                                        <span><i class="fas fa-clock"></i> منذ 27 دقيقة</span>
+                                        <span><i class="fas fa-user"></i> نسرين</span>
+                                        <span><i class="fas fa-flag"></i> عرض واحد</span>
+                                    </div>
+                                </div>
+                                <div class="recent-item">
+                                    <div class="recent-name">اخر مشاريع برمجة تطوير الواقع والتطبيقات</div>
+                                    <div class="recent-meta">
+                                        <span><i class="fas fa-clock"></i> منذ 27 دقيقة</span>
+                                        <span><i class="fas fa-user"></i> نسرين</span>
+                                        <span><i class="fas fa-flag"></i> عرض واحد</span>
+                                    </div>
+                                </div>
+                                <div class="recent-item">
+                                    <div class="recent-name">اخر مشاريع برمجة تطوير الواقع والتطبيقات</div>
+                                    <div class="recent-meta">
+                                        <span><i class="fas fa-clock"></i> منذ 27 دقيقة</span>
+                                        <span><i class="fas fa-user"></i> نسرين</span>
+                                        <span><i class="fas fa-flag"></i> عرض واحد</span>
+                                    </div>
+                                </div>
+                                 <div class="recent-item">
+                                    <div class="recent-name">اخر مشاريع برمجة تطوير الواقع والتطبيقات</div>
+                                    <div class="recent-meta">
+                                        <span><i class="fas fa-clock"></i> منذ 27 دقيقة</span>
+                                        <span><i class="fas fa-user"></i> نسرين</span>
+                                        <span><i class="fas fa-flag"></i> عرض واحد</span>
+                                    </div>
+                                </div>
+                         
+                          
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-5 col-md-5 mb-4">
+                    <div class="footer-section">
+                        <div class="footer-brand">
+                            <div class="footer-logo">
+                                <div class="footer-logo-icon"></div>
+                                تلنت فلو
+                            </div>
+                            <p class="footer-description">
+                                نوفر منصتنا أفضل البرامج للطلاب لحسابهم الخاص <br>
+                                والمطورين، مما يسهل التواصل والتعاون وإنجاز الأعمال
+                            </p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-5 mb-4">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="footer-section">
+                                <h5>تلنت فلو</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">عن تلنت فلو</a></li>
+                                    <li><a href="#">الأسئلة الشائعة</a></li>
+                                    <li><a href="#">ضمان حقوقك</a></li>
+                                    <li><a href="#">شروط الاستخدام</a></li>
+                                    <li><a href="#">بيان الخصوصية</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="footer-section">
+                                <h5>مشاريع</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">مشاريع أعمال</a></li>
+                                    <li><a href="#">مشاريع هندسة ومعمارة</a></li>
+                                    <li><a href="#">مشاريع تسويق</a></li>
+                                    <li><a href="#">مشاريع برمجة</a></li>
+                                    <li><a href="#">مشاريع كتابة وترجمة</a></li>
+                                    <li><a href="#">مشاريع دعم ومساعدة</a></li>
+                                    <li><a href="#">مشاريع تدريب</a></li>
+                                    <li><a href="#">التصنيفات </a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="footer-section">
+                                <h5>روابط</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">ابحث عن عمل</a></li>
+                                    <li><a href="#">معرض الأعمال</a></li>
+                                    <li><a href="#">مدونة مستقل</a></li>
+                                    <li><a href="#">مركز المساعدة</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="footer-bottom">
+                Copyright 2025 © – All rights reserved to talent flow
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap 5 JS (for dropdowns, etc. if needed, though not strictly for design) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+</body>
+
+</html>
