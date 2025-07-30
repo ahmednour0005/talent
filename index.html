@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> تلنت فلو</title>
+    <!-- Bootstrap 5 RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/rtl_website_style.css">
+   
+</head>
+
+<body>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu" id="sidebarMenu">
+
+
+        <div class="sidebar-content">
+            <!-- Search -->
+            <div class="sidebar-search">
+                <input type="text" class="sidebar-search-input" placeholder="ابحث عن...">
+            </div>
+
+            <!-- Menu Items -->
+            <div class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-link">
+                    <span>
+                        <i class="fas fa-plus sidebar-menu-icon"></i>
+                        أضف مشروع
+                    </span>
+                </a>
+            </div>
+
+            <div class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-link">
+                    <span>
+                        <i class="fas fa-briefcase sidebar-menu-icon"></i>
+                        تصفح معرض الأعمال
+                    </span>
+                </a>
+            </div>
+
+            <div class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-link">
+                    <span>
+                        <i class="fas fa-handshake sidebar-menu-icon"></i>
+                        تصافح المشاريع
+                    </span>
+                </a>
+            </div>
+
+            <div class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-link">
+                    <span>
+                        <i class="fas fa-users sidebar-menu-icon"></i>
+                        ابحث عن مستقلين
+                    </span>
+                </a>
+            </div>
+
+            <div class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-link dropdown-toggle" data-target="classifications">
+                    <span>
+                        <i class="fas fa-list sidebar-menu-icon"></i>
+                        التصنيفات
+                    </span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </a>
+                <div class="sidebar-submenu" id="classifications">
+                    <a href="#" class="sidebar-submenu-item">مشاريع البرمجة</a>
+                    <a href="#" class="sidebar-submenu-item">مشاريع التصميم</a>
+                    <a href="#" class="sidebar-submenu-item">مشاريع الكتابة والترجمة</a>
+                    <a href="#" class="sidebar-submenu-item">مشاريع التسويق</a>
+                    <a href="#" class="sidebar-submenu-item">مشاريع الدعم والمساعدة</a>
+                </div>
+            </div>
+
+            <div class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-link dropdown-toggle" data-target="projects">
+                    <span>
+                        <i class="fas fa-folder sidebar-menu-icon"></i>
+                        أقسام المشاريع
+                    </span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </a>
+                <div class="sidebar-submenu" id="projects">
+                    <a href="#" class="sidebar-submenu-item">مشاريع أعمال</a>
+                    <a href="#" class="sidebar-submenu-item">مشاريع هندسة ومعمارة</a>
+                    <a href="#" class="sidebar-submenu-item">مشاريع تسويق</a>
+                    <a href="#" class="sidebar-submenu-item">مشاريع برمجة</a>
+                    <a href="#" class="sidebar-submenu-item">مشاريع كتابة وترجمة</a>
+                    <a href="#" class="sidebar-submenu-item">مشاريع دعم ومساعدة</a>
+                    <a href="#" class="sidebar-submenu-item">مشاريع تدريب</a>
+                </div>
+            </div>
+
+            <div class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-link dropdown-toggle" data-target="talentflow">
+                    <span>
+                        <i class="fas fa-info-circle sidebar-menu-icon"></i>
+                        تلنت فلو
+                    </span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </a>
+                <div class="sidebar-submenu" id="talentflow">
+                    <a href="#" class="sidebar-submenu-item">عن تلنت فلو</a>
+                    <a href="#" class="sidebar-submenu-item">الأسئلة الشائعة</a>
+                    <a href="#" class="sidebar-submenu-item">ضمان حقوقك</a>
+                    <a href="#" class="sidebar-submenu-item">شروط الاستخدام</a>
+                    <a href="#" class="sidebar-submenu-item">بيان الخصوصية</a>
+                    <a href="#" class="sidebar-submenu-item">مركز المساعدة</a>
+                    <a href="#" class="sidebar-submenu-item">ابحث عن عمل</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section with Header -->
+    <section class="hero-section">
+        <!-- Header Navigation -->
+        <header class="hero-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-4">
+                        <div class="nav-left logo-section">
+                            <button class="menu-toggle" id="menuToggle">
+                                <span class="hamburger-line"></span>
+                                <span class="hamburger-line"></span>
+                                <span class="hamburger-line"></span>
+                            </button>
+                            <div class="logo">
+                                <img src="assets/images/logo_white.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="nav-right">
+                            <i class="fas fa-globe globe-icon"></i>
+                            <div class="nav-links">
+                                <a href="#" class="nav-link login ">تسجيل دخول</a>
+                                <a href="#" class="nav-link">حساب جديد</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="main-title">مستقبلك المهني... حُرّ ومرن مع تالنت فلو</h1>
+
+            <p class="subtitle">
+                منصه تجمع المستقلين المبدعين بأصحاب المشاريع ابدأ عملك الحر بكل ثقة وسلاسة
+                <br>
+                ازدهر في عالم سوق التميز المستقل!
+
+            </p>
+
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder=" ابحث عما تريدوا...">
+                    <i class="fas fa-search search-icon"></i>
+                    <button class="search-btn">بحث</button>
+                </div>
+            </div>
+
+            <button class="cta-btn">ابحث عن عمل</button>
+        </div>
+    </section>
+
+    <!-- Work Section - Completely Redesigned -->
+    <section class="work-section">
+        <div class="container">
+            <!-- Section Title -->
+            <h2 class="work-title">هل لديك عمل تريد إنجازه</h2>
+
+            <!-- Main Content -->
+            <div class="work-content-wrapper">
+                <!-- Image Side -->
+                <!-- Features Side -->
+                <div class="work-features-side">
+                    <div class="features-container">
+                        <!-- Feature 1: Search and Discover -->
+                        <div class="feature-card">
+                            <div class="feature-content">
+                                <div class="feature-icon">
+                                    <img src="assets/images/sec1-3.png" alt="">
+                                </div>
+                                <div class="feature-text">
+                                    <h4 class="feature-title">ابحث عن المواهب واكتشفها</h4>
+                                    <p class="feature-description">
+                                        اعثر على الشخص الأنسب لاحتياجات مشروعك باستخدام أدوات البحث
+                                        سهلة الاستخدام، والمصممة خصيصاً لمساعدتك في العثور على المحترفين
+                                        ذوي المهارات العالية بسهولة.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2: Choose and Hire -->
+                        <div class="feature-card">
+                            <div class="feature-content">
+                                <div class="feature-icon">
+                                    <img src="assets/images/sec1-2.png" alt="">
+                                </div>
+                                <div class="feature-text">
+                                    <h4 class="feature-title">اختر المرشحين المناسبين ووظفهم بثقة</h4>
+                                    <p class="feature-description">
+                                        بسط عملية التوظيف من خلال تقييم ملفات المرشحين، وخبراتهم أعمالهم،
+                                        ومعرفتهم، لتتمكن اتخاذ قرارات واثقة لمشروعك.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3: Feedback and Collaboration -->
+                        <div class="feature-card">
+                            <div class="feature-content">
+                                <div class="feature-icon">
+                                    <img src="assets/images/sec1-1.png" alt="">
+                                </div>
+                                <div class="feature-text">
+                                    <h4 class="feature-title">قدم ملاحظاتك وعزز التعاون</h4>
+                                    <p class="feature-description">
+                                        شارك تجربتك وساهم في بناء مجتمع من خلال ترك ملاحظات قيمة للمواهب
+                                        التي عملت معها.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-image-side">
+                    <div class="work-image-container">
+                        <img src="assets/images/section-image.jpg" alt="Professional working" class="work-main-image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- How Talent Flow Helps Section -->
+    <section class="talent-flow-helps-section">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="helps-title">كيف يساعدك تلنت فلو على إنجاز أعمالك</h2>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="row">
+                <!-- Feature 1: Complete work quickly -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="helps-card">
+                        <div class="helps-icon-wrapper">
+                            <img src="assets/images/icon-growth-chart.png" alt="Growth Chart" class="helps-icon">
+                        </div>
+                        <h4 class="helps-card-title">أنجز أعمالك بسرعة وسهولة</h4>
+                        <p class="helps-card-description">
+                            أتمم مشروعك وأرسل مهمة تنفيذية لأفضل المستقلين المحترفين
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Hire best freelancers -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="helps-card">
+                        <div class="helps-icon-wrapper">
+                            <img src="assets/images/icon-search-person.png" alt="Search Person" class="helps-icon">
+                        </div>
+                        <h4 class="helps-card-title">وظف أفضل المستقلين</h4>
+                        <p class="helps-card-description">
+                            تصفح ملفات المستقلين واطلع على مشاريعهم وأعمالهم
+                            وتقييمات العملاء واختر الأنسب
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Lower cost projects -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="helps-card">
+                        <div class="helps-icon-wrapper">
+                            <img src="assets/images/icon-hand-money.png" alt="Hand Money" class="helps-icon">
+                        </div>
+                        <h4 class="helps-card-title">نفذ مشاريعك بتكلفة أقل</h4>
+                        <p class="helps-card-description">
+                            حدد الميزانية المناسبة لمشروعك واختر من بين المستقلين الخبراء
+                            للعمل على إنجاز المطلوب
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Cover skill needs -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="helps-card">
+                        <div class="helps-icon-wrapper">
+                            <img src="assets/images/icon-team-search.png" alt="Team Search" class="helps-icon">
+                        </div>
+                        <h4 class="helps-card-title">غطي احتياجاتك من المهارات</h4>
+                        <p class="helps-card-description">
+                            وظف خبراء في مختلف المجالات ومن مختلف البلدان لتنفيذ
+                            المشاريع التي تحتاجها
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 5: Secure rights (highlighted) -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="helps-card">
+                        <div class="helps-icon-wrapper">
+                            <img src="assets/images/icon-handshake.png" alt="Handshake" class="helps-icon">
+                        </div>
+                        <h4 class="helps-card-title">اضمن حقوقك</h4>
+                        <p class="helps-card-description">
+                            احفظ حقوقك بشكل كامل حيث يقوم موقع تلنت فلو بدور
+                            الوسيط بينك وبين المستقل
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 6: Safe payment -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="helps-card">
+                        <div class="helps-icon-wrapper">
+                            <img src="assets/images/icon-shield-money.png" alt="Shield Money" class="helps-icon">
+                        </div>
+                        <h4 class="helps-card-title">ادفع بأريحية وأمان</h4>
+                        <p class="helps-card-description">
+                            ادفع قيمة العمل للمطلوب عبر وسائل دفع آمنة مع ضمان
+                            كامل لحقوقك المالية
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Section -->
+    <section class="mobile-app-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Text Content -->
+                <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                    <div class="app-content">
+                        <div class="decorative-dots-2"></div>
+                        <div class="app-badge">
+                            قريباً
+                        </div>
+                        <h2 class="app-title">تطبيق الجوال <strong>متوفر !</strong></h2>
+                        <p class="app-description">
+                            جرب تلنت فلو من أفضل تطبيقات الفريلانسر بوفر ميزات قوية
+                            تسهل التواصل بين المستقلين وأصحاب المشاريع
+                        </p>
+                        <div class="app-buttons">
+                            <a href="#" class="app-store-btn">
+                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/app-store-light%201-UiWYpoKlQmjVOGU5rZ3fLYUqt6yUfw.png"
+                                    alt="Download on App Store" class="store-badge">
+                            </a>
+                            <a href="#" class="google-play-btn">
+                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/google-paly-light%201-3IXCv43fR89gw4y9VPlcuP7sh14js5.png"
+                                    alt="Get it on Google Play" class="store-badge">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone Image -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="app-phone-container">
+                        <div class="decorative-circle"></div>
+                        <div class="decorative-dots-1"></div>
+
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Group%204-yBtdjfOCusZbfenn8kuorUIVFpszOj.png"
+                            alt="Talent Flow Mobile App" class="app-phone-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Freelancers Categories Section -->
+    <section class="freelancer-categories-section">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="categories-title">اعثر على مستقلين محترفين في كافة المجالات</h2>
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="row">
+                <!-- Category 1: Programming -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-image-wrapper">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/programming%201-d8xXjgoKvNADaKZYO024KhYm7uFRrV.png"
+                                alt="Programming" class="category-image">
+                        </div>
+                        <h4 class="category-title">برمجة، تطوير مواقع والتطبيقات</h4>
+                    </div>
+                </div>
+
+                <!-- Category 2: Writing & Translation -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-image-wrapper">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/writingtranslation%201-4kFKnBUGCBnUsiLkqlgnBeVSI5OCLa.png"
+                                alt="Writing & Translation" class="category-image">
+                        </div>
+                        <h4 class="category-title">كتابة، تحرير، ترجمة ولغات</h4>
+                    </div>
+                </div>
+
+                <!-- Category 3: Digital Marketing -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-image-wrapper">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/item-01%201-Yc2WDzjEZWk5QC6frFNTuz4FaIus2S.png"
+                                alt="Digital Marketing" class="category-image">
+                        </div>
+                        <h4 class="category-title">تسويق إلكتروني ومبيعات</h4>
+                    </div>
+                </div>
+
+                <!-- Category 4: Web Development -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-image-wrapper">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/programming%201-d8xXjgoKvNADaKZYO024KhYm7uFRrV.png"
+                                alt="Web Development" class="category-image">
+                        </div>
+                        <h4 class="category-title">برمجة، تطوير مواقع والتطبيقات</h4>
+                    </div>
+                </div>
+
+                <!-- Category 5: Support & Help -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-image-wrapper">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/programming%201-d8xXjgoKvNADaKZYO024KhYm7uFRrV.png"
+                                alt="Support & Help" class="category-image">
+                        </div>
+                        <h4 class="category-title">دعم، مساعدة وإدخال بيانات</h4>
+                    </div>
+                </div>
+
+                <!-- Category 6: Video & Animation -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-image-wrapper">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/programming%201-d8xXjgoKvNADaKZYO024KhYm7uFRrV.png"
+                                alt="Video & Animation" class="category-image">
+                        </div>
+                        <h4 class="category-title">تصميم، فيديو وصوتيات</h4>
+                    </div>
+                </div>
+
+                <!-- Category 7: Business Consulting -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-image-wrapper">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tech%20company-cuate%201-NQDDMFXdneRttbKHXIo7BLRhTGxbpX.png"
+                                alt="Business Consulting" class="category-image">
+                        </div>
+                        <h4 class="category-title">أعمال وخدمات استشارية وإدارية</h4>
+                    </div>
+                </div>
+
+                <!-- Category 8: Training & Education -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-image-wrapper">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/In%20progress-pana%201-HlfIk6fLtQ98NaapusBRhSRmKCEoOA.png"
+                                alt="Training & Education" class="category-image">
+                        </div>
+                        <h4 class="category-title">تدريب، تعليم ومساعدة عن بُعد</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Freelancer Showcase Section with Swiper -->
+    <section class="freelancer-showcase-section">
+        <div class="container-fluid">
+            <!-- Section Title -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="showcase-title">استكشف فريقنا المختار بعناية من المستقلين</h2>
+                    <p class="showcase-subtitle">
+                        اكتشف نخبة المواهب ضمن أفضل 1%، الذين تم اختيارهم<br>
+                        بعناية لضمان التميز والخبرة الفريدة.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Swiper Slider -->
+            <div class="swiper freelancer-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Freelancer 1 -->
+                    <div class="swiper-slide">
+                        <div class="freelancer-card">
+                            <img src="./assets/images/Ellipse 14.png" alt="عبدالله أحمد" class="freelancer-avatar">
+                            <h4 class="freelancer-name">عبدالله أحمد</h4>
+                            <p class="freelancer-specialty">معلق صوتي</p>
+                            <div class="freelancer-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <span class="rating-text">5.0/5.0</span>
+                            </div>
+                            <button class="view-profile-btn">عرض الملف الشخصي</button>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 2 -->
+                    <div class="swiper-slide">
+                        <div class="freelancer-card">
+                            <img src="./assets/images/Ellipse 14.png" alt="يمنه عبدالله" class="freelancer-avatar">
+                            <h4 class="freelancer-name">يمنه عبدالله</h4>
+                            <p class="freelancer-specialty">Php</p>
+                            <div class="freelancer-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <span class="rating-text">5.0/5.0</span>
+                            </div>
+                            <button class="view-profile-btn">عرض الملف الشخصي</button>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 3 -->
+                    <div class="swiper-slide">
+                        <div class="freelancer-card">
+                            <img src="./assets/images/Ellipse 14.png" alt="ود بن محمد" class="freelancer-avatar">
+                            <h4 class="freelancer-name">ود بن محمد</h4>
+                            <p class="freelancer-specialty">Frontend developer</p>
+                            <div class="freelancer-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star empty"></i>
+                                <span class="rating-text">4.0/5.0</span>
+                            </div>
+                            <button class="view-profile-btn">عرض الملف الشخصي</button>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 4 -->
+                    <div class="swiper-slide">
+                        <div class="freelancer-card">
+                            <img src="./assets/images/Ellipse 14.png" alt="محمد مصطفى" class="freelancer-avatar">
+                            <h4 class="freelancer-name">محمد مصطفى</h4>
+                            <p class="freelancer-specialty">Web designer</p>
+                            <div class="freelancer-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <span class="rating-text">5.0/5.0</span>
+                            </div>
+                            <button class="view-profile-btn">عرض الملف الشخصي</button>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 5 -->
+                    <div class="swiper-slide">
+                        <div class="freelancer-card">
+                            <img src="./assets/images/Ellipse 14.png" alt="أحمد مصطفى" class="freelancer-avatar">
+                            <h4 class="freelancer-name">أحمد مصطفى</h4>
+                            <p class="freelancer-specialty">Web developer</p>
+                            <div class="freelancer-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <span class="rating-text">5.0/5.0</span>
+                            </div>
+                            <button class="view-profile-btn">عرض الملف الشخصي</button>
+                        </div>
+                    </div>
+
+                    <!-- Freelancer 6 -->
+                    <div class="swiper-slide">
+                        <div class="freelancer-card">
+                            <img src="./assets/images/Ellipse 14.png" alt="سارة أحمد" class="freelancer-avatar">
+                            <h4 class="freelancer-name">سارة أحمد</h4>
+                            <p class="freelancer-specialty">UI/UX Designer</p>
+                            <div class="freelancer-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <span class="rating-text">4.8/5.0</span>
+                            </div>
+                            <button class="view-profile-btn">عرض الملف الشخصي</button>
+                        </div>
+                    </div>
+
+                    <!-- Additional Freelancers -->
+                    <div class="swiper-slide">
+                        <div class="freelancer-card">
+                            <img src="./assets/images/Ellipse 14.png" alt="محمد علي" class="freelancer-avatar">
+                            <h4 class="freelancer-name">محمد علي</h4>
+                            <p class="freelancer-specialty">Mobile Developer</p>
+                            <div class="freelancer-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <span class="rating-text">5.0/5.0</span>
+                            </div>
+                            <button class="view-profile-btn">عرض الملف الشخصي</button>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="freelancer-card">
+                            <img src="./assets/images/Ellipse 14.png" alt="فاطمة محمد" class="freelancer-avatar">
+                            <h4 class="freelancer-name">فاطمة محمد</h4>
+                            <p class="freelancer-specialty">Content Writer</p>
+                            <div class="freelancer-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star empty"></i>
+                                <span class="rating-text">4.5/5.0</span>
+                            </div>
+                            <button class="view-profile-btn">عرض الملف الشخصي</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- Discover More Button -->
+            <div class="text-center mt-4">
+                <button class="discover-more-btn">اكتشف المزيد</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="faq-title">الأسئلة الشائعة</h2>
+                    <p class="faq-subtitle">
+                        احصل على إجابات قريبة لأسئلتك. هل تحتاج إلى مزيد من<br>
+                        الإرشادات؟ اطلع على وثائقنا الشاملة لجميع استفساراتك.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Container -->
+            <div class="faq-section-ques">
+                <div class="faq-list">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ما هو تلنت فلو؟
+                            <i class="fas fa-plus toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                تلنت فلو هو منصة رائدة تربط بين المستقلين المحترفين وأصحاب المشاريع. نوفر بيئة آمنة
+                                وموثوقة لإنجاز الأعمال بجودة عالية وأسعار تنافسية. منصتنا تسهل عملية العثور على المواهب
+                                المناسبة وإدارة المشاريع بكفاءة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            كيف أستخدم منه؟
+                            <i class="fas fa-plus toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                استخدام تلنت فلو سهل وبسيط: أولاً، قم بإنشاء حساب مجاني. ثانياً، انشر مشروعك مع تفاصيل
+                                واضحة. ثالثاً، استقبل عروض من المستقلين المهتمين. رابعاً، اختر المستقل المناسب وابدأ
+                                العمل. خامساً، تابع التقدم واستلم العمل المكتمل.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            كيف يمكن طلب فلو حقيقي؟
+                            <i class="fas fa-plus toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                لطلب خدمة حقيقية على تلنت فلو، ادخل إلى قسم "انشر مشروعك"، اكتب وصفاً مفصلاً لما تحتاجه،
+                                حدد الميزانية والمدة الزمنية، أضف أي ملفات مرجعية إذا لزم الأمر، ثم انشر المشروع. ستبدأ
+                                في استقبال عروض من المستقلين المؤهلين خلال دقائق.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ما هي الطلبات التي يمكنني أن أطلبها فيها مستقلين عن بعد؟
+                            <i class="fas fa-plus toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                يمكنك طلب مجموعة واسعة من الخدمات: البرمجة وتطوير المواقع والتطبيقات، التصميم الجرافيكي
+                                وتصميم المواقع، الكتابة والترجمة، التسويق الرقمي ووسائل التواصل الاجتماعي، إدخال
+                                البيانات والدعم الإداري، المونتاج والتصوير، الاستشارات التجارية، والتدريب والتعليم عن
+                                بُعد.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            ماذا سيحدث بعد تقديم مشروعي على تلنت فلو؟
+                            <i class="fas fa-plus toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                بعد نشر مشروعك، ستبدأ في استقبال عروض من المستقلين المهتمين خلال ساعات قليلة. يمكنك
+                                مراجعة ملفاتهم الشخصية، أعمالهم السابقة، وتقييمات العملاء. بعد اختيار المستقل المناسب،
+                                ستبدأ مرحلة التنفيذ مع إمكانية التواصل المباشر ومتابعة التقدم عبر المنصة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            لماذا التوظيف عبر بعد عبر تلنت فلو أفضل للعمل؟
+                            <i class="fas fa-plus toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                التوظيف عن بُعد عبر تلنت فلو يوفر مرونة أكبر، وصول لمواهب عالمية متنوعة، تكلفة أقل
+                                مقارنة بالتوظيف التقليدي، سرعة في إنجاز المشاريع، وضمان الجودة من خلال نظام التقييمات.
+                                كما نوفر حماية مالية كاملة وخدمة عملاء متاحة على مدار الساعة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 mb-4">
+                    <div class="footer-section">
+                        <div class="footer-brand">
+                            <div class="footer-logo">
+                                <div class="footer-logo-icon"></div>
+                                تلنت فلو
+                            </div>
+                            <p class="footer-description">
+                                نوفر منصتنا أفضل البرامج للطلاب لحسابهم الخاص <br>
+                                والمطورين، مما يسهل التواصل والتعاون وإنجاز الأعمال
+                            </p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-5 mb-4">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="footer-section">
+                                <h5>تلنت فلو</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">عن تلنت فلو</a></li>
+                                    <li><a href="#">الأسئلة الشائعة</a></li>
+                                    <li><a href="#">ضمان حقوقك</a></li>
+                                    <li><a href="#">شروط الاستخدام</a></li>
+                                    <li><a href="#">بيان الخصوصية</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="footer-section">
+                                <h5>مشاريع</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">مشاريع أعمال</a></li>
+                                    <li><a href="#">مشاريع هندسة ومعمارة</a></li>
+                                    <li><a href="#">مشاريع تسويق</a></li>
+                                    <li><a href="#">مشاريع برمجة</a></li>
+                                    <li><a href="#">مشاريع كتابة وترجمة</a></li>
+                                    <li><a href="#">مشاريع دعم ومساعدة</a></li>
+                                    <li><a href="#">مشاريع تدريب</a></li>
+                                    <li><a href="#">التصنيفات </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="footer-section">
+                                <h5>روابط</h5>
+                                <ul class="footer-links">
+                                    <li><a href="#">ابحث عن عمل</a></li>
+                                    <li><a href="#">معرض الأعمال</a></li>
+                                    <li><a href="#">مدونة مستقل</a></li>
+                                    <li><a href="#">مركز المساعدة</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                Copyright 2025 © – All rights reserved to talent flow
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <!-- International Telephone Input JS -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Sidebar Menu Toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebarMenu = document.getElementById('sidebarMenu');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const sidebarClose = document.getElementById('sidebarClose');
+
+            // Open sidebar
+            menuToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Menu toggle clicked');
+
+                menuToggle.classList.toggle('active');
+                sidebarMenu.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+
+                if (sidebarMenu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close sidebar function
+            function closeSidebar() {
+                console.log('Closing sidebar');
+                menuToggle.classList.remove('active');
+                sidebarMenu.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            // Close sidebar events
+            if (sidebarClose) {
+                sidebarClose.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    closeSidebar();
+                });
+            }
+
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    closeSidebar();
+                });
+            }
+
+            // Sidebar dropdown functionality
+            $('.dropdown-toggle').on('click', function (e) {
+                e.preventDefault();
+                const target = $(this).data('target');
+                const submenu = $('#' + target);
+                const arrow = $(this).find('.dropdown-arrow');
+
+                // Close other submenus
+                $('.sidebar-submenu').not(submenu).removeClass('active');
+                $('.dropdown-arrow').not(arrow).removeClass('active');
+
+                // Toggle current submenu
+                submenu.toggleClass('active');
+                arrow.toggleClass('active');
+            });
+
+            // FAQ Toggle Function
+            $('.faq-question').on('click', function () {
+                const $parentItem = $(this).closest('.faq-item');
+                const $answer = $parentItem.find('.faq-answer');
+                const $icon = $(this).find('.toggle-icon');
+
+                // Close other open FAQs
+                $('.faq-item').not($parentItem).find('.faq-answer').slideUp(300);
+                $('.faq-item').not($parentItem).find('.faq-question').removeClass('active');
+                $('.faq-item').not($parentItem).find('.toggle-icon').removeClass('fa-minus').addClass('fa-plus').css('transform', 'rotate(0deg)');
+
+                // Toggle current FAQ
+                $answer.slideToggle(300);
+                $(this).toggleClass('active');
+                if ($(this).hasClass('active')) {
+                    $icon.removeClass('fa-plus').addClass('fa-minus').css('transform', 'rotate(0deg)');
+                } else {
+                    $icon.removeClass('fa-minus').addClass('fa-plus').css('transform', 'rotate(0deg)');
+                }
+            });
+
+            // Initialize Swiper
+            const swiper = new Swiper('.freelancer-swiper', {
+                slidesPerView: 4,
+                centeredSlides: true,
+                loop: true,
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                grabCursor: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                        centeredSlides: true,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 25,
+                        centeredSlides: true,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 30,
+                        centeredSlides: true,
+                    },
+                    1200: {
+                        slidesPerView: 5,
+                        spaceBetween: 30,
+                        centeredSlides: true,
+                    }
+                }
+            });
+
+            // Search functionality
+            $('.search-btn').click(function () {
+                const searchTerm = $('.search-input').val();
+                if (searchTerm.trim()) {
+                    alert('البحث عن: ' + searchTerm);
+                } else {
+                    alert('يرجى إدخال كلمة البحث');
+                }
+            });
+
+            // Enter key search
+            $('.search-input').keypress(function (e) {
+                if (e.which == 13) {
+                    $('.search-btn').click();
+                }
+            });
+
+            // CTA button
+            $('.cta-btn').click(function () {
+                alert('سيتم توجيهك إلى صفحة البحث عن العمل');
+            });
+
+            // Navigation links
+            $('.nav-link').click(function (e) {
+                e.preventDefault();
+                const linkText = $(this).text();
+                alert('سيتم توجيهك إلى صفحة ' + linkText);
+            });
+
+            // App store buttons
+            $('.app-store-btn, .google-play-btn').click(function (e) {
+                e.preventDefault();
+                const storeName = $(this).hasClass('app-store-btn') ? 'App Store' : 'Google Play';
+                alert('سيتم توجيهك إلى ' + storeName);
+            });
+
+            // Smooth animations
+            $('.search-input').focus(function () {
+                $(this).parent().css('transform', 'scale(1.02)');
+            }).blur(function () {
+                $(this).parent().css('transform', 'scale(1)');
+            });
+
+            // Add click functionality to category cards
+            $('.category-card').click(function () {
+                const categoryTitle = $(this).find('.category-title').text();
+                alert('سيتم توجيهك إلى قسم: ' + categoryTitle);
+            });
+
+            // View profile button functionality
+            $('.view-profile-btn').click(function () {
+                const freelancerName = $(this).closest('.freelancer-card').find('.freelancer-name').text();
+                alert('سيتم عرض ملف ' + freelancerName + ' الشخصي');
+            });
+
+            // Discover more button
+            $('.discover-more-btn').click(function () {
+                alert('سيتم توجيهك إلى صفحة جميع المستقلين');
+            });
+
+            // Sidebar menu links
+            $('.sidebar-menu-link, .sidebar-submenu-item').click(function (e) {
+                if (!$(this).hasClass('dropdown-toggle')) {
+                    e.preventDefault();
+                    const linkText = $(this).text().trim();
+                    alert('سيتم توجيهك إلى: ' + linkText);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
